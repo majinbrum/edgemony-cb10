@@ -1,0 +1,81 @@
+.card {
+	width: 100%;
+	margin-bottom: 2rem;
+
+	border-radius: 1rem;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.card-img img {
+	width: 100%;
+}
+
+.card-content {
+	padding: 1rem;
+}
+
+.card-content .add {
+	margin-top: 1rem;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.card-content .add button {
+	cursor: pointer;
+	border: 0;
+	background-color: transparent;
+}
+
+/** MEDIA **/
+@media (min-width: 768px) {
+	.card {
+		height: auto;
+		min-height: fit-content;
+
+		margin-bottom: 0;
+
+		flex-basis: 400px;
+		flex-grow: 0;
+		flex-shrink: 0;
+	}
+
+	.card-img {
+		height: 250px;
+		max-height: auto;
+	}
+
+	.card-img img {
+		width: 100%;
+		height: 100%;
+	}
+
+	.games-list .card-img img {
+		object-fit: cover;
+		object-position: left;
+	}
+
+	.merch-list .card-img img {
+		object-fit: contain;
+	}
+
+	.wishlist-list .card-img img {
+		object-fit: contain;
+		object-position: top;
+	}
+
+	.card-content {
+		height: calc(100% - 250px);
+		min-height: fit-content;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		row-gap: 1rem;
+	}
+
+	.card-content .add {
+		margin-top: 0;
+	}
+}

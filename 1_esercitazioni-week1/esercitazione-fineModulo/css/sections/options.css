@@ -1,0 +1,100 @@
+@import url("../components/options-card.css");
+
+.options {
+	background-color: var(--bgMedium);
+	text-align: center;
+}
+
+.options-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 20px;
+
+	padding: 40px 20px;
+}
+
+.options-bg {
+	display: none;
+}
+
+.options-container p.small {
+	color: var(--textLighter);
+}
+
+.options-content h2 {
+	color: var(--textWhite);
+}
+
+.options-cards {
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+}
+
+/* media md */
+@media only screen and (min-width: 768px) {
+	.options-content h2 {
+		text-align: center;
+	}
+
+	.options-content p {
+		text-align: center;
+		max-width: unset;
+	}
+
+	.options {
+		text-align: start;
+	}
+
+	.options-bg {
+		display: block;
+	}
+
+	.options-bg img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+
+	.options-container {
+		position: relative;
+	}
+
+	.options-bg-icons {
+		display: block;
+	}
+
+	.options-bg-icons img {
+		width: 300px;
+		position: absolute;
+	}
+
+	.options-bg-icons img:nth-child(1) {
+		top: 325px;
+		left: -300px;
+	}
+
+	.options-bg-icons img:nth-child(2) {
+		top: 95px;
+		right: -300px;
+	}
+
+	.options-bg-icons img:nth-child(3) {
+		bottom: -10px;
+		left: -340px;
+	}
+
+	.options-bg-icons img:nth-child(4) {
+		bottom: -15px;
+		right: -230px;
+	}
+}
+
+/* media lg */
+@media only screen and (min-width: 992px) {
+	.options-cards {
+		flex-direction: row;
+		column-gap: 20px;
+	}
+}

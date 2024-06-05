@@ -1,0 +1,21 @@
+/* for buttons  h3*/
+
+.button {
+	display: block;
+	font-size: 22px;
+	width: fit-content;
+}
+
+.button-primary {
+	font-weight: 700;
+	padding: 20px 60px;
+	background-color: var(--btnBg);
+	color: var(--btnText);
+}
+
+.button-link {
+	font-weight: 500;
+	color: var(--btnBg);
+	text-decoration: underline;
+	text-underline-offset: 10px;
+}

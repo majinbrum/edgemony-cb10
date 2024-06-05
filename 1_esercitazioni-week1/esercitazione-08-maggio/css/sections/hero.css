@@ -1,0 +1,101 @@
+.hero {
+	position: relative;
+	background-color: (--colorDark);
+	overflow: hidden;
+	/* background-image: url("https://picsum.photos/1920/1080");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center; */
+}
+
+.hero-background {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.hero-background::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 79, 0.6);
+}
+
+.hero-background img {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.hero-container {
+	position: relative;
+	height: 100vh;
+	color: #f7f7f7;
+	padding-top: 80px;
+}
+
+.hero-content {
+	margin-bottom: 60px;
+}
+
+.hero-content h1 {
+	margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+	color: var(--colorLight);
+}
+
+/* .hero-image {
+	text-align: center;
+} */
+
+/* .hero-image:hover img {
+	transform: translateY(-20px) rotate(20deg);
+} */
+
+@keyframes animHeroImage {
+	from {
+		transform: translateY(0);
+	}
+	to {
+		transform: translateY(-40px);
+	}
+}
+
+.hero-image img {
+	max-width: 320px;
+	width: 100%;
+	height: auto;
+
+	display: block;
+	margin: 0 auto;
+
+	/* transition: transform 0.5s ease-in-out; */
+	animation: animHeroImage 1s linear infinite alternate;
+}
+
+/* media mobile */
+
+/* media desktop */
+@media (min-width: 1024px) {
+	.hero-container {
+		display: flex;
+		align-items: center;
+	}
+
+	.hero-content,
+	.hero-image {
+		/* width: 50%; */
+		width: calc(50% - 10px);
+	}
+
+	/* .hero-content {
+		padding-right: 20px;
+	} */
+}

@@ -1,0 +1,61 @@
+/** HEADER**/
+.news-header {
+	width: calc(100% - 4rem);
+	height: calc(85dvh - 4rem);
+	margin: 2rem;
+	border-radius: 1rem;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+	background-image: url("../../img/header/zelda-totk_mobile.jpg");
+	background-size: cover;
+	background-position: center;
+
+	opacity: 0.6;
+}
+
+.news-header .background-img {
+	display: none;
+}
+
+/** MEDIA **/
+@media (min-width: 768px) {
+	.news-header {
+		width: calc(100vw - 100px - 4rem);
+		height: calc(60vh - 2rem);
+
+		margin: 0 2rem;
+
+		background-image: unset;
+		position: relative;
+
+		box-shadow: none;
+	}
+
+	.news-header .background-blur {
+		width: 100%;
+		height: 100%;
+
+		background-image: url("../../img/header/zelda-totk.jpg");
+		background-size: cover;
+		filter: blur(6px);
+	}
+
+	.news-header .background-img {
+		width: 100%;
+		height: 100%;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		position: absolute;
+		top: 0;
+		z-index: 1;
+	}
+
+	.news-header .background-img img {
+		width: auto;
+		height: 60%;
+		border-radius: 1rem;
+	}
+}

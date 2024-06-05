@@ -1,0 +1,27 @@
+:root {
+	--textDark: #1c1e63;
+	--textMedium: #343485;
+	--textRegular: #696ba5;
+	--textLight: #989ad3;
+	--textAccent: #ff4685;
+	--textLighter: #ffffff85;
+	--textWhite: #ffffff;
+
+	--btnBg: #1c1e63;
+	--btnText: #ffffff;
+
+	--bgDark: #1c1e63;
+	--bgMedium: #343485;
+	--bgRegular: #414195;
+	--bgLight: #989ad3;
+	--bgWhite: #ffffff;
+	--bgAccent: #f95b91;
+
+	--accent1: #ffe6e6;
+	--accent2: #fffd93;
+	--accent3: #b3ffd2;
+	--accent4: #49e1ff;
+	--accent5: #99beff;
+	--accent6: #f1d6ff;
+	--accent7: #ffbbca;
+}

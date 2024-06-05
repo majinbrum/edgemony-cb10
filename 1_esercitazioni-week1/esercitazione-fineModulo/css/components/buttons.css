@@ -1,0 +1,50 @@
+/* for buttons  h3*/
+
+.button {
+	display: block;
+	font-size: 22px;
+	width: fit-content;
+}
+
+.button-primary {
+	font-weight: 700;
+	padding: 20px 60px;
+	color: var(--btnText);
+}
+
+.button-primary.dark {
+	background-color: var(--btnBg);
+}
+
+.button-primary.dark:hover {
+	background-color: var(--bgAccent);
+}
+
+.button-primary.dark2 {
+	background-color: var(--btnBg);
+}
+
+.button-primary.dark2:hover {
+	background-color: var(--bgWhite);
+	color: var(--textDark);
+}
+
+.button-primary.accent {
+	background-color: var(--bgAccent);
+}
+
+.button-primary.accent:hover {
+	background-color: var(--btnBg);
+}
+
+.button-link {
+	font-weight: 500;
+	padding: 20px 60px;
+	color: var(--btnBg);
+	text-decoration: underline;
+	text-underline-offset: 10px;
+}
+
+.button-link:hover {
+	color: var(--textAccent);
+}

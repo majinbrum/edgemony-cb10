@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="265px" height="274px" viewBox="0 0 265 274" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>2</title>
+    <g id="Latest-Landing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Group" transform="translate(-2.000000, 3.000000)" fill-rule="nonzero" stroke="#0D052C" stroke-width="1.5">
+            <g id="Shapes-/-three-dimensional-square-with-a-hole-inside-(3)" transform="translate(2.680000, -2.680000)">
+                <polygon id="light_green_part" fill="#53F2D4" points="262.729333 0.67 109.076 163.6944 69.9569333 163.6944 69.9569333 0.67"></polygon>
+                <polygon id="light_blue_part" fill="#9AF3FF" points="262.729333 0.67 262.729333 193.4424 109.076 193.4424 109.076 163.6944"></polygon>
+                <rect id="black_part" fill="#1D1E5F" x="69.9569333" y="163.6944" width="39.1190667" height="29.748"></rect>
+                <polygon id="blue_part" fill="#62A3FF" points="109.076 193.4424 109.076 272.109333 0.67 272.109333 69.9569333 193.4424"></polygon>
+                <polygon id="black_part-2" fill="#9E59FF" points="69.9569333 163.6944 69.9569333 193.4424 0.67 272.109333 0.67 163.6944"></polygon>
+                <polygon id="green_part" fill="#47DDDF" points="69.9569333 0.67 69.9569333 163.6944 0.67 163.6944"></polygon>
+                <polygon id="light_blue_part-2" fill="#87D4FF" points="262.729333 193.4424 109.076 272.109333 109.076 193.4424"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

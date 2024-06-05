@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="221px" height="225px" viewBox="0 0 221 225" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>3</title>
+    <g id="Latest-Landing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Group" transform="translate(11.000000, 13.000000)" fill-rule="nonzero" stroke="#0D052C" stroke-width="1.5">
+            <g id="Shapes-/-three-dimensional-square-(5)" transform="translate(-10.613333, -12.603333)">
+                <rect id="square" fill="#9AF3FF" x="157.714133" y="0.504133333" width="61.9487" height="61.9487"></rect>
+                <polygon id="rectangle" fill="#62A3FF" points="219.662833 62.4462 62.4462 223.085633 0.4975 223.085633 61.1328 161.136933 157.714133 62.4462"></polygon>
+                <polygon id="rectangle-2" fill="#87D4FF" points="157.714133 0.4975 157.714133 62.4462 61.1328 161.136933 0.4975 223.085633 0.4975 161.136933"></polygon>
+                <g id="lines" transform="translate(0.000000, 19.900000)">
+                    <line x1="0.4975" y1="160.745567" x2="157.714133" y2="0.106133333" id="Path"></line>
+                    <line x1="0.4975" y1="179.6771" x2="157.714133" y2="19.0376667" id="Path"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

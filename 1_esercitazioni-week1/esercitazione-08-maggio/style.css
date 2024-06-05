@@ -1,0 +1,16 @@
+@import url("css/variables.css");
+@import url("css/reset.css");
+@import url("css/typography.css");
+@import url("css/layout.css");
+
+/* components */
+@import url("css/components/buttons.css");
+/* end components*/
+
+/* sections */
+@import url("css/sections/hero.css");
+@import url("css/sections/get-started.css");
+@import url("css/sections/features.css");
+@import url("css/sections/services.css");
+@import url("css/sections/video-section.css");
+/* end sections */

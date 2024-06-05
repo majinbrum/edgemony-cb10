@@ -1,0 +1,49 @@
+/** NAVBAR **/
+.navbar {
+	height: 15dvh;
+
+	background-color: #e60012;
+	color: #fff;
+	padding: 1rem 2rem 1rem 1rem;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navbar-list {
+	list-style-type: none;
+	display: flex;
+	column-gap: 1rem;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navbar-list li a {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/** MEDIA **/
+@media (min-width: 768px) {
+	.navbar {
+		min-width: 100px;
+		width: 100px;
+		height: 100vh;
+		flex-direction: column;
+		justify-content: flex-start;
+		row-gap: 2rem;
+
+		padding: 1rem 2rem;
+
+		position: fixed;
+		z-index: 1;
+	}
+
+	.navbar-list {
+		flex-direction: column;
+		row-gap: 2rem;
+	}
+}

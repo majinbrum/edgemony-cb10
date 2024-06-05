@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Super Mario Shoes</title>
+		<link rel="icon" href="./img/mario-favicon.png" />
+		<!-- CSS -->
+		<link rel="stylesheet" href="./css/style.css" />
+
+		<!-- Google fonts 1-->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet" />
+
+		<!-- Google fonts 2-->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet" />
+	</head>
+	<body>
+		<!-- ! NAVBAR ! -->
+		<nav class="navbar">
+			<a href="#"><img src="./img/navbar/Nintendo_Switch_logo.svg" alt="Nintendo Switch logo" width="100" height="100" /></a>
+
+			<ul class="navbar-list">
+				<li>
+					<a href="#"><img src="./img/navbar/search-icon.png" alt="Search icon" width="40" height="40" />Cerca</a>
+				</li>
+				<li>
+					<a href="#games-container"><img src="./img/navbar/joystick-icon.png" alt="Home icon" width="40" height="40" />Giochi</a>
+				</li>
+				<li>
+					<a href="#merch-container"><img src="./img/navbar/merch-icon.png" alt="Home icon" width="40" height="40" />Merch</a>
+				</li>
+				<li>
+					<a href="#wishlist-container"><img src="./img/navbar/heart-icon.png" alt="Wishlist icon" width="40" height="40" />Wishlist</a>
+				</li>
+			</ul>
+		</nav>
+
+		<main>
+			<!-- ! HEADER ! -->
+			<header class="news-header">
+				<div class="background-blur"></div>
+				<div class="background-img">
+					<img src="./img/header/zelda-totk.jpg" alt="" />
+				</div>
+			</header>
+
+			<!-- ! GAMES ! -->
+			<div class="list-container" id="games-container">
+				<h2>Giochi</h2>
+				<section class="cards-list games-list"></section>
+			</div>
+
+			<!-- ! MERCH ! -->
+			<div class="list-container" id="merch-container">
+				<h2>Merchandising</h2>
+				<section class="cards-list merch-list"></section>
+			</div>
+
+			<!-- ! WISHLIST ! -->
+			<div class="list-container wishlist-container" id="wishlist-container">
+				<h2>Wishlist</h2>
+				<div class="wishlist-buttons">
+					<button class="btn-unfiltered active">Tutti</button>
+					<button class="btn-filtered-games">Giochi</button>
+					<button class="btn-filtered-merch">Merch</button>
+					<!-- Trigger/Open The Modal -->
+					<button class="btn-add">
+						<img src="./img/heart-icon-full.png" alt="Heart icon" width="40" height="40" />
+					</button>
+					<!-- The Modal -->
+					<div class="modal">
+						<!-- Modal content -->
+						<div class="modal-content">
+							<p>L'elemento che stai provando ad aggiungere è già nella wishlist!</p>
+							<button class="modal-close">Annulla</button>
+						</div>
+					</div>
+				</div>
+				<section class="cards-list wishlist-list"></section>
+			</div>
+
+			<!-- ! FOOTER ! -->
+			<footer class="footer-section">
+				<ul class="footer-social-list">
+					<li>
+						<a href="#">
+							<img src="./img/footer/facebook-icon.png" alt="facebook-icon" width="30" height="30" />
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="./img/footer/instagram-icon.png" alt="instagram-icon" width="30" height="30" />
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="./img/footer/whatsapp-icon.png" alt="whatsapp-icon" width="30" height="30" />
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="./img/footer/youtube-icon.png" alt="youtube-icon" width="30" height="30" />
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="./img/footer/twitch-icon.png" alt="twitch-icon" width="30" height="30" />
+						</a>
+					</li>
+				</ul>
+			</footer>
+		</main>
+
+		<script type="module" src="./script.js"></script>
+	</body>
+</html>

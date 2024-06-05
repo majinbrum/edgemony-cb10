@@ -1,0 +1,16 @@
+@import url("css/reset.css");
+@import url("css/layout.css");
+@import url("css/typography.css");
+@import url("css/variables.css");
+
+/* SECTIONS */
+@import url("css/sections/navbar.css");
+@import url("css/sections/hero.css");
+@import url("css/sections/custom.css");
+@import url("css/sections/scenes.css");
+@import url("css/sections/options.css");
+@import url("css/sections/mockups.css");
+@import url("css/sections/footer.css");
+
+/* COMPONENTS */
+@import url("css/components/buttons.css");

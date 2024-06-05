@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="./style.css">
+	</head>
+	<body>
+		<!-- appEl.insertAdjacentHTML("beforebegin", ...) -->
+		<div id="app">
+			<!-- appEl.insertAdjacentHTML("afterbegin", ...) -->
+			<div class="container">
+				<h1 id="heading">Ciao Classe!</h1>
+				<h2 id="kicker">Bevenuti nel mondo del DOM</h2>
+				<p id="description">Testo a caso</p>
+				<button data-reset>Cancel</button>
+				<button data-increment>Click me!</button>
+			</div>
+
+			<div>
+				<form>
+					<div>
+						<label for="">Dimmi qualcosa</label>
+						<input id="query" name="query" type="text" min-length="3" autocomplete="off" value="ciao">
+					</div>
+
+					<button type="submit">Invia</button>
+				</form>
+
+				<div id="preview"></div>
+			</div>
+
+			<!-- appEl.insertAdjacentHTML("beforeend", ...)  -->
+		</div>
+		<!-- appEl.insertAdjacentHTML("afterend", ...) -->
+		<script src="5-.js"></script>
+	</body>
+</html>

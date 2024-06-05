@@ -1,0 +1,125 @@
+html {
+	scroll-behavior: smooth;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Urbanist", sans-serif;
+	line-height: 1.5;
+}
+
+body {
+	padding: 3rem 5rem;
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+header nav ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	list-style: none;
+	column-gap: 2rem;
+}
+
+article ul {
+	padding-inline-start: 40px;
+	list-style: circle;
+}
+
+article#article5 a {
+	text-decoration: wavy underline blueviolet 0.1rem;
+	text-underline-offset: 0.3rem;
+}
+
+section.container {
+	margin-top: 4rem;
+	height: 10rem;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+div[class^="quadrato"] {
+	width: 10rem;
+	height: 10rem;
+}
+
+div[class^="rettangolo"] {
+	width: 25%;
+	height: 100%;
+}
+
+div[class^="quadrato"],
+div[class^="rettangolo"] {
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+div[class^="quadrato"]:hover,
+div[class^="rettangolo"]:hover {
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+div.quadrato1 {
+	background-color: blueviolet;
+}
+
+div.quadrato1:hover {
+	background-color: orange;
+}
+
+div.rettangolo1 {
+	background-color: yellow;
+}
+
+div.rettangolo1:hover {
+	background-color: lightcoral;
+}
+
+div.rettangolo2 {
+	background-color: aqua;
+}
+
+div.rettangolo2:hover {
+	background-color: green;
+}
+
+div.quadrato2 {
+	background-color: grey;
+}
+
+div.quadrato2:hover {
+	background-color: blue;
+}
+
+/* desktop */
+@media only screen and (min-width: 769px) {
+	body {
+		background-color: lightblue;
+	}
+
+	header nav ul {
+		flex-direction: row;
+		column-gap: 2rem;
+	}
+
+	section.container {
+		flex-direction: row;
+		align-items: center;
+	}
+
+	div[class^="rettangolo"] {
+		width: 50%;
+	}
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<style>
+			main {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				height: 500px;
+			}
+
+			button,
+			.counter {
+				font-family: "Courier New", Courier, monospace;
+			}
+
+			button {
+				border: 0;
+				border-radius: 1rem;
+				padding: 1rem 2rem;
+				font-size: large;
+				cursor: cell;
+				box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+			}
+
+			button:active {
+				font-weight: 600;
+				box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+			}
+
+			.counter {
+				font-size: 3rem;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<h1 class="counter">0</h1>
+			<button>Count!</button>
+		</main>
+		<script src="esercizio3.js"></script>
+	</body>
+</html>

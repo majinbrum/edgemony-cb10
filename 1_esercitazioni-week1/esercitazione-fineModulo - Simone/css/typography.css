@@ -1,0 +1,79 @@
+/* 
+<uniquifier>: Use a unique and descriptive class name
+ <weight>: Use a value from 300 to 700  
+ */
+
+body {
+	font-family: "Space Grotesk", sans-serif;
+	font-optical-sizing: auto;
+}
+
+::selection {
+	background: var(--textAccent);
+	color: var(--textWhite);
+}
+
+h1 {
+	font-size: 32px;
+	font-weight: 700;
+	max-width: 25ch;
+}
+
+h2 {
+	font-size: 32px;
+	font-weight: 600;
+	max-width: 20ch;
+}
+
+h3 {
+	font-size: 26px;
+	font-weight: 500;
+}
+
+p {
+	font-size: 22px;
+	font-weight: 400;
+	max-width: 24ch;
+}
+
+p.small {
+	font-size: 16px;
+	font-weight: 300;
+	max-width: 24ch;
+}
+
+/* h4 {
+	font-size: 22px;
+	font-weight: 400;
+}
+
+p {
+	font-size: 16px;
+	font-weight: 300;
+} */
+
+/* media sm */
+@media only screen and (min-width: 576px) {
+}
+
+/* media md */
+@media only screen and (min-width: 768px) {
+	h1 {
+		font-size: 42px;
+	}
+
+	h2 {
+		font-size: 42px;
+	}
+}
+
+/* media lg */
+@media only screen and (min-width: 992px) {
+	h1 {
+		font-size: 56px;
+	}
+
+	h2 {
+		font-size: 56px;
+	}
+}

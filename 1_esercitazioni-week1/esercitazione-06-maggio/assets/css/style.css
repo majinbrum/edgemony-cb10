@@ -1,0 +1,185 @@
+:root {
+	--white: #ffffff;
+	--orange: #d5a454;
+	--darkPurple: #6b18b9;
+	--black: #1d1d1d;
+}
+
+html {
+	scroll-padding-top: 5vh;
+	scroll-behavior: smooth;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "IBM Plex Mono", monospace;
+	line-height: 1.5;
+}
+
+ul {
+	list-style: none;
+}
+
+mark {
+	background-color: var(--orange);
+	color: var(--darkPurple);
+}
+
+header {
+	padding: 8rem 10rem;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	row-gap: 2rem;
+
+	background-color: var(--darkPurple);
+	color: var(--white);
+}
+
+header nav ul {
+	display: flex;
+	justify-content: space-between;
+	column-gap: 1rem;
+}
+
+img {
+	border-radius: 3rem;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+button,
+.buttonSubmit {
+	background-color: var(--white);
+	padding: 0.8rem 0.8rem;
+	border-radius: 3rem;
+
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+	cursor: pointer;
+	transition: background-color 0.3s linear;
+}
+
+.buttonSubmit {
+	color: var(--darkPurple);
+	font-weight: bold;
+}
+
+button a {
+	color: var(--darkPurple);
+	text-decoration: none;
+	font-weight: bold;
+}
+
+button:hover,
+.buttonSubmit:hover {
+	background-color: var(--orange);
+}
+
+.buttonSubmit:hover {
+	color: var(--darkPurple);
+	font-weight: bold;
+}
+
+button:hover a {
+	color: var(--darkPurple);
+	font-weight: bold;
+}
+
+main {
+	margin: 8rem 10rem;
+	display: flex;
+	flex-direction: column;
+	row-gap: 4rem;
+
+	color: var(--black);
+}
+
+main section {
+	display: flex;
+}
+
+main section div.articleImg {
+	width: 300px;
+}
+
+main section div.articleImg img {
+	width: 300px;
+	height: 100%;
+
+	object-fit: cover;
+}
+
+main section article {
+	display: flex;
+	flex-direction: column;
+	row-gap: 2rem;
+	padding-left: 4rem;
+}
+
+em {
+	color: var(--orange);
+}
+
+article a {
+	color: var(--darkPurple);
+}
+
+hr {
+	border-color: var(--darkPurple);
+}
+
+footer {
+	padding: 8rem 10rem;
+	display: flex;
+	justify-content: space-between;
+	column-gap: 5rem;
+
+	background-color: var(--darkPurple);
+	color: var(--white);
+}
+
+footer a {
+	color: var(--orange);
+}
+
+section#conclusioni,
+section.newsletter {
+	width: 50%;
+}
+
+section#conclusioni h3,
+section.newsletter h3 {
+	margin-bottom: 2rem;
+}
+
+section.newsletter form {
+	display: flex;
+	flex-direction: column;
+	row-gap: 2rem;
+}
+
+section.newsletter form div.formFlex {
+	display: flex;
+	column-gap: 2rem;
+}
+
+section.newsletter form div.formFlex label {
+	display: block;
+}
+
+section.newsletter .formSubmit {
+	display: flex;
+	align-items: center;
+	column-gap: 2rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+	padding: 0.6rem 0.8rem;
+	border-radius: 3rem;
+	font-weight: bold;
+}

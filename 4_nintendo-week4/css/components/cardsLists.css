@@ -1,0 +1,49 @@
+/**  CARDS LIST **/
+.list-container h2 {
+	margin: 0 0 1rem 2rem;
+}
+
+.cards-list {
+	margin: 2rem;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.wishlist-list {
+	margin-bottom: 0;
+}
+
+.wishlist-list-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.wishlist-list-container .btn-add {
+	margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+	.list-container {
+		margin: 2rem 0;
+		overflow: hidden;
+	}
+
+	.cards-list {
+		/* width: calc(100vw - 100px); */
+		/* width: 100%; */
+		/* height: 100%; */
+
+		padding: 2rem;
+		margin: 0;
+
+		flex-direction: row;
+		column-gap: 2rem;
+		align-items: stretch;
+
+		flex-wrap: nowrap;
+		overflow-x: scroll;
+		scrollbar-color: #eee transparent;
+		scrollbar-width: thin;
+	}
+}

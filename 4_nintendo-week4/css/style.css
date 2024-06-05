@@ -1,0 +1,13 @@
+/**  GLOBAL **/
+@import url(./global.css);
+
+/**  SECTIONS **/
+@import url(./sections/navbar.css);
+@import url(./sections/header.css);
+@import url(./sections/footer.css);
+
+/**  COMPONENTS **/
+@import url(./components/cardsLists.css);
+@import url(./components/cards.css);
+@import url(./components/buttons.css);
+@import url(./components/modal.css);

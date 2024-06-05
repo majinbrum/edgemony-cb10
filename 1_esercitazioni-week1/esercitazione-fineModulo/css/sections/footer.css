@@ -1,0 +1,13 @@
+.footer-container {
+	padding: 40px 20px;
+	width: 100%;
+	text-align: center;
+}
+
+.footer-container p {
+	max-width: unset;
+}
+
+.footer-container p:first-child {
+	margin-bottom: 20px;
+}
