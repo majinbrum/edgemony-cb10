@@ -1,0 +1,66 @@
+User Stories
+1. Come user, desidero vedere il mio Pokedex
+
+    a. creare l'interfaccia del Pokedex
+
+    b. creare il contenuto, se il Pokedex è vuoto
+    (strumenti di lavoro [vscode, browser, console, network], setup del progetto)
+    Design di riferimento
+
+*************************************************************************
+
+2. Come user, vorrei aggiungere un Pokemon al Pokedex
+
+    a. implementare un metodo che ci permetta di ottenere una lista di Pokemon
+        i. lista di pokémon -> qual è la struttura dati migliore nel mio caso da utilizzare? Un array di oggetti
+        ii. realizzo una funzione
+            1. prendere una lista di pokémon
+            2. generare tante card, quanti sono i pokémon contenuti nella lista
+                a. ciclo for
+        iii. manipolazione del dom
+            1. prendere l'insieme di card e attaccarle alla lista
+
+    b. Creare un bottone per aggiungere un Pokemon al Pokedex
+        i. button
+        ii. evento -> click
+            1. che so gli eventi?
+            2. come faccio ad aggiungerlo proprio al bottone?
+            3. come faccio a dirgli cosa deve fare?
+        iii. manipolare la lista e aggiungerci un Pokemon
+        iv. ho bisogno di mostrare a video la card
+        v. mi serve un pokemon
+
+    c. se il Pokemon, mostrare un messaggio di errore, altrimenti, aggiungili
+        i. lo mostro attraverso un log, poi lo faccio a video secco, e poi lo faccio con una modale
+        ii. if
+        iii. posso mostrare per ora lo stesso pokemon perché sono sicuro che se la funzione è corretta mostrerà subito l'errore
+        iv. avrò bisogno di una nuova lista di pokemon da cui prendere dei pokemon nuovi
+        v. 
+
+*************************************************************************
+
+3. Come user, vorrei vedere il dettaglio di un Pokemon
+
+    a. Creare una modale
+
+    b. Creare un bottone per aprire una modale
+
+    c. Creare un bottone per chiudere una modale
+
+*************************************************************************
+
+4. Come user, vorrei poter modificare un Pokemon esistente
+
+    a. creare un bottone per modificare un singolo Pokemon
+
+    b. creare una form per modificare il Pokemon
+
+    c. creare un bottone per applicare la modifica come fatta
+
+*************************************************************************
+
+5. Come user, vorrei poter cancellare un Pokemon esistente dal Pokédex
+
+    a. Creare un bottone eliminare un singolo Pokemon
+
+    b. Implementare il metodo per ELIMINARE il Pokemon

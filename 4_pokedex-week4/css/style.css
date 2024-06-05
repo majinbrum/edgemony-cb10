@@ -1,0 +1,156 @@
+/** TYPOGRAPHY **/
+
+/* @font-face {
+	font-family: "Pokémon X/Y";
+	src: local("Pokémon X/Y"), url("../font/Pokemon\ X\ and\ Y.ttf") format("truetype");
+} */
+
+/** VARIABLES **/
+/* :root {
+	--normale: #b5b0a6;
+	--lotta: #bb5544;
+	--volante: #5390e3;
+	--veleno: #aa5599;
+	--terra: #ddbb55;
+	--roccia: #bbaa66;
+	--coleottero: #9bac1e;
+	--spettro: #6060b1;
+	--acciaio: #aaaabb;
+	--fuoco: #ff4422;
+	--acqua: #3091f1;
+	--erba: #72c452;
+	--elettro: #ffd042;
+	--psico: #f05090;
+	--ghiaccio: #77ddf5;
+	--drago: #7161e3;
+	--buio: #775544;
+	--folletto: #ffb2ff;
+} */
+
+:root {
+	--erba: #b4e99f;
+	--erbaDark: #72c452;
+	--fuoco: #fab9ae;
+	--fuocoDark: #ff4422;
+	--acqua: #add0f3;
+	--acquaDark: #3091f1;
+	--coleottero: #c4cb8a;
+	--coleotteroDark: #9bac1e;
+	--normale: #dbdbdb;
+	--normaleDark: #999286;
+	--elettro: #fbe8af;
+	--elettroDark: #ffd042;
+}
+
+.erba {
+	background-color: var(--erba);
+	border: 0.4rem var(--erbaDark);
+	border-style: dashed double;
+}
+
+.fuoco {
+	background-color: var(--fuoco);
+	border: 0.4rem var(--fuocoDark);
+	border-style: dashed double;
+}
+
+.acqua {
+	background-color: var(--acqua);
+	border: 0.4rem var(--acquaDark);
+	border-style: dashed double;
+}
+
+.coleottero {
+	background-color: var(--coleottero);
+	border: 0.4rem var(--coleotteroDark);
+	border-style: dashed double;
+}
+
+.normale {
+	background-color: var(--normale);
+	border: 0.4rem var(--normaleDark);
+	border-style: dashed double;
+}
+
+.elettro {
+	background-color: var(--elettro);
+	border: 0.4rem var(--elettroDark);
+	border-style: dashed double;
+}
+
+/** GENERAL **/
+@font-face {
+	font-family: "Pokémon Classic";
+	src: local("Pokémon Classic"), url("../font/Pokemon\ Classic.ttf") format("truetype");
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+	font-family: "Pokémon Classic", monospace;
+}
+
+h1,
+h2 {
+	font-weight: 600;
+}
+
+h3,
+p {
+	font-weight: 500;
+}
+
+/** LAYOUT **/
+div.layout {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem 4rem;
+}
+
+/** HEADER **/
+header {
+	margin-bottom: 2rem;
+}
+
+header h1 {
+	text-align: center;
+}
+
+/** MAIN **/
+main {
+	text-transform: uppercase;
+}
+
+/** CARD LIST**/
+.card-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 2rem;
+}
+
+/** CARD**/
+.card {
+	width: 300px;
+	padding: 2rem;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	row-gap: 1rem;
+
+	/* background-color: var(--normale); */
+	border-radius: 3rem;
+	/* border: 0.2rem solid var(--normale); */
+}
+
+.card__img {
+	width: 100%;
+	background-color: #ffffff;
+	border-radius: 50%;
+}
