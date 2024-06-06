@@ -4,7 +4,7 @@
 	<h3>
 		N°<span>001</span>
 	</h3>
-	<img class='pokeball' src='./pokeball.png' alt='Pokéball image' width='30' height='30' />
+	<img class='pokeball' src='./img/pokeball.png' alt='Pokéball image' width='30' height='30' />
 	<h2 class='pokemon-name'>Bulbasaur</h2>
 	<h4 class='pokemon-type erba'>Erba</h4>
 	<h4 class='pokemon-type veleno'>Veleno</h4>
@@ -49,7 +49,7 @@ const createPokedexLi = (pokemonNumber, pokemonName, pokemonTypes) => {
 
 	const pokeBall = createEl("img");
 	addClass(pokeBall, "pokeBall");
-	pokeBall.src = "./pokeball.png";
+	pokeBall.src = "./img/pokeball.png";
 	pokeBall.alt = "Pokéball image";
 	pokeBall.width = "30";
 	pokeBall.height = "30";

@@ -93,7 +93,7 @@ body {
 .gba-container {
 	width: 1338px;
 	height: 771px;
-	background-image: url("../GBA-transparent.png");
+	background-image: url("../img/GBA-transparent.png");
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
