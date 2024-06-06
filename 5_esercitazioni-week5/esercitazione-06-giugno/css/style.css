@@ -1,0 +1,168 @@
+/** VARIABLES **/
+:root {
+	--1u: 20px;
+
+	--whiteText: #ffffff;
+	--whiteTextShadow: 2px 2px 3px #010101;
+
+	--normale: #b5b0a6;
+	--lotta: #bb5544;
+	--volante: #5390e3;
+	--veleno: #aa5599;
+	--terra: #ddbb55;
+	--roccia: #bbaa66;
+	--coleottero: #9bac1e;
+	--spettro: #6060b1;
+	--acciaio: #aaaabb;
+	--fuoco: #ff4422;
+	--acqua: #3091f1;
+	--erba: #72c452;
+	--elettro: #ffd042;
+	--psico: #f05090;
+	--ghiaccio: #77ddf5;
+	--drago: #7161e3;
+	--buio: #775544;
+	--folletto: #ffb2ff;
+}
+
+/** TYPOGRAPHY **/
+@font-face {
+	font-family: "PokémonXY";
+	src: local("PokémonXY"), url("../font/PokemonXY.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Pokémon Classic";
+	src: local("Pokémon Classic"), url("../font/PokemonClassic.ttf") format("truetype");
+}
+
+h1 {
+	font-weight: 500;
+}
+
+h2 {
+	font-size: 28px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+h3 {
+	font-size: 24px;
+	text-transform: uppercase;
+}
+
+h3 span {
+	font-size: 21px;
+}
+
+h4,
+h5 {
+	font-size: 21px;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+p {
+	font-weight: 500;
+}
+
+/** GENERAL **/
+html {
+	scroll-behavior: smooth;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+	font-family: "PokémonXY", monospace;
+	letter-spacing: 2px;
+}
+
+body {
+	height: 100vh;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/** GBA **/
+
+.gba-container {
+	width: 1338px;
+	height: 771px;
+	background-image: url("../GBA-transparent.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.gba-screen {
+	margin-top: -75px;
+	margin-left: 10px;
+	width: 580px;
+	height: 370px;
+}
+
+/** POKéDEX **/
+
+.pokedex-header,
+.pokedex-footer {
+	height: 45px;
+	background-color: #9c7c53;
+	color: var(--whiteText);
+	text-shadow: var(--whiteTextShadow);
+}
+
+.pokedex-header {
+	text-align: center;
+}
+
+.pokedex-footer {
+	display: flex;
+	align-items: center;
+	justify-content: end;
+	column-gap: var(--1u);
+	padding-right: var(--1u);
+}
+
+.pokedex-main {
+	height: calc(370px - 45px - 45px);
+	overflow-y: scroll;
+	background-color: #ffecd4;
+	padding: var(--1u);
+}
+
+.pokedex-li {
+	display: flex;
+	align-items: center;
+	column-gap: calc(var(--1u) / 2);
+}
+
+.pokedex-li .list-arrow {
+	font-size: 32px;
+	/* color: transparent; */
+}
+
+/** POKéDEX LI**/
+
+.pokemon-type {
+	padding: calc(var(--1u) / 4) calc(var(--1u) / 1.5);
+	border-radius: 10px;
+	color: var(--whiteText);
+	text-shadow: var(--whiteTextShadow);
+}
+
+.pokemon-type.erba {
+	background-color: var(--erba);
+}
+
+.pokemon-type.veleno {
+	background-color: var(--veleno);
+}
