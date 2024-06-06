@@ -35,43 +35,39 @@ const createPokedexLi = (pokemonNumber, pokemonName) => {
 	pokemonNumberEl.append(pokemonNumberSpanEl);
 
 	const pokeBall = createEl("img");
-	addClass(pokeBall, "pokeball");
+	addClass(pokeBall, "pokeBall");
 	pokeBall.src = "./img/pokeball.png";
 	pokeBall.alt = "Pokéball image";
-	pokeBall.width = "20";
-	pokeBall.height = "20";
+	pokeBall.width = "30";
+	pokeBall.height = "30";
 
 	const pokemonNameEl = createEl("h2");
 	addClass(pokemonNameEl, "pokemon-name");
 	pokemonNameEl.setAttribute("data-name", pokemonName);
 	pokemonNameEl.textContent = pokemonName;
 
-	pokedexLi.append(listArrow, pokeBall, pokemonNumberEl, pokemonNameEl);
+	pokedexLi.append(listArrow, pokemonNumberEl, pokeBall, pokemonNameEl);
 };
 
 const appendPokemonIcon = (pokemonName, pokemonIcon) => {
-	const singlePokedexLi = document.querySelector(`.pokemon-name[data-name="${pokemonName}"]`);
+	const singlePokedexLi = document.querySelector(`.pokemon-name[data-name="${pokemonName}"]`).parentElement;
 
 	const pokemonIconDiv = createEl("div");
 	addClass(pokemonIconDiv, "pokemon-icon");
 
 	const pokemonIconEl = createEl("img");
-	addClass(pokemonIconEl, "pokemon-icon-img");
 	pokemonIconEl.src = pokemonIcon;
 	pokemonIconEl.alt = `${pokemonName} icon`;
 	pokemonIconEl.width = "30";
 	pokemonIconEl.height = "30";
 
-	pokemonIconDiv.append(pokemonIconEl);
+	pokemonIconDiv.appendChild(pokemonIconEl);
 
-	singlePokedexLi.insertAdjacentElement("beforebegin", pokemonIconDiv);
+	singlePokedexLi.appendChild(pokemonIconDiv);
 };
 
 const appendPokemonTypes = (pokemonName, pokemonTypes) => {
 	const singlePokedexLi = document.querySelector(`.pokemon-name[data-name="${pokemonName}"]`).parentElement;
-
-	const pokemonTypesDiv = createEl("div");
-	addClass(pokemonTypesDiv, "pokemon-types");
 
 	pokemonTypes.forEach((pokemonSingleType) => {
 		const pokemonType = pokemonSingleType.type.name;
@@ -79,10 +75,8 @@ const appendPokemonTypes = (pokemonName, pokemonTypes) => {
 		pokemonTypeEl.textContent = pokemonType;
 		pokemonTypeEl.classList = `pokemon-type ${pokemonType}`;
 
-		pokemonTypesDiv.append(pokemonTypeEl);
+		singlePokedexLi.appendChild(pokemonTypeEl);
 	});
-
-	singlePokedexLi.append(pokemonTypesDiv);
 };
 
 export { createPokedexLi, appendPokemonIcon, appendPokemonTypes };
