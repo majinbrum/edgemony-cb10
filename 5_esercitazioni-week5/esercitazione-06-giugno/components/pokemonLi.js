@@ -21,7 +21,7 @@ const addClass = (el, className) => {
 
 const pokedexMainDiv = document.querySelector(".pokedex-main");
 
-const createPokedexLi = (pokemonNumber, pokemonName) => {
+const createPokedexLi = (pokemonNumber, pokemonName, pokemonTypes) => {
 	const pokedexLi = createEl("div");
 	addClass(pokedexLi, "pokedex-li");
 	pokedexMainDiv.append(pokedexLi);
@@ -58,12 +58,17 @@ const createPokedexLi = (pokemonNumber, pokemonName) => {
 	addClass(pokemonNameEl, "pokemon-name");
 	pokemonNameEl.textContent = pokemonName;
 
-	// const pokemonTypeEl = createEl("h4");
-	// pokemonTypeEl.classList = `pokemon-type ${pokemonType}`;
-	// pokemonNameEl.textContent = pokemonType;
-
-	// pokedexLi.append(listArrow, pokemonNumberEl, pokeBall, pokemonNameEl, pokemonTypeEl);
 	pokedexLi.append(listArrow, pokemonNumberEl, pokeBall, pokemonNameEl);
+
+	pokemonTypes.forEach((pokemonSingleType) => {
+		const pokemonType = pokemonSingleType.type.name;
+		const pokemonTypeEl = createEl("h4");
+		pokemonTypeEl.textContent = pokemonType;
+		pokemonTypeEl.classList = `pokemon-type ${pokemonType}`;
+		pokedexLi.appendChild(pokemonTypeEl);
+	});
+
+	// pokedexLi.append(listArrow, pokemonNumberEl, pokeBall, pokemonNameEl);
 };
 
 export { createPokedexLi };

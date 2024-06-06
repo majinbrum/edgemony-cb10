@@ -9,17 +9,12 @@ fetch("https://pokeapi.co/api/v2/pokedex/1/")
 			const pokemonName = pokemon.pokemon_species.name;
 			const pokemonNumber = pokemon.entry_number;
 
-			createPokedexLi(pokemonNumber, pokemonName);
+			fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}/`)
+				.then((res) => res.json())
+				.then((pokemon) => {
+					const pokemonTypes = pokemon.types;
+					// console.log(pokemonTypes[0].type.name);
+					createPokedexLi(pokemonNumber, pokemonName, pokemonTypes);
+				});
 		});
-
-		// fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}/`)
-		// 	.then((res) => res.json())
-		// 	.then((pokemon) => {
-		// 		pokemon.types.forEach((pokemonSingleType) => {
-		// 			const pokemonType = pokemonSingleType.type.name;
-		// 			console.log(pokemonType);
-		// 		});
-		// 	});
 	});
-
-// 148
