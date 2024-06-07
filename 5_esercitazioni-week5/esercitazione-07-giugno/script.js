@@ -15,70 +15,97 @@ const options = {
 // "https://api.themoviedb.org/3/movie/popular?page=1"
 const BASE_URL = "https://api.themoviedb.org/3/";
 const endpointPopularMovies = "movie/popular";
+const endpointTopRatedMovies = "movie/top_rated";
 const URLpage1 = "?page=1";
 const URLpage2 = "?page=2";
 
 //**QUERY ELEMENTS**/
 const mainContainer = querySel("main");
 const headerContainer = querySel("header");
-console.log(headerContainer);
 
-fetchMovies(URLpage1);
+//**!FIRST FETCH!**/
+fetchMovies(endpointPopularMovies, URLpage1);
+
+//**CHANGE CATEGORY**/
+const btnPopularMovies = querySel(".popular-movies-btn");
+const btnTopRatedMovies = querySel(".top-rated-btn");
+
+//**SEARCH**/
+const searchBarInput = querySel(".search-bar-input");
 
 //**CHANGE PAGE**/
-const btnPage1 = querySel(".btnPage1");
-const btnPage2 = querySel(".btnPage2");
+const btnPage1 = querySel(".page-1-btn");
+const btnPage2 = querySel(".page-2-btn");
 
 headerContainer.addEventListener("click", (event) => {
 	switch (event.target) {
+		case btnPopularMovies:
+			fetchMovies(endpointPopularMovies, URLpage1);
+			break;
+
+		case btnTopRatedMovies:
+			fetchMovies(endpointTopRatedMovies, URLpage1);
+			break;
+
 		case btnPage1:
-			mainContainer.innerHTML = "";
-			fetchMovies(URLpage1);
+			fetchMovies(endpointPopularMovies, URLpage1);
 			break;
 
 		case btnPage2:
-			mainContainer.innerHTML = "";
-			fetchMovies(URLpage2);
+			fetchMovies(endpointPopularMovies, URLpage2);
 			break;
 
 		default:
-			break;
+			console.log("ups!");
 	}
 });
 
 //**FETCH**/
-function fetchMovies(URLpage) {
-	fetch(BASE_URL + endpointPopularMovies + URLpage, options)
+function fetchMovies(movieCategory, URLpage) {
+	fetch(BASE_URL + movieCategory + URLpage, options)
 		.then((response) => response.json())
 		.then((data) => {
-			console.log("data: ", data);
+			// console.log("data: ", data);
 			const moviesFromDB = data.results;
-			console.log("movie img: ", moviesFromDB[0].poster_path);
+			// console.log("movie img: ", moviesFromDB[0].poster_path);
 			moviesFromDB.forEach((singleMovieFromDB) => {
-				const movieTitle = singleMovieFromDB.title;
-				const movieOverview = singleMovieFromDB.overview;
-				const movieReleaseDate = singleMovieFromDB.release_date;
-				const moviePopularity = singleMovieFromDB.popularity;
-				const movieVoteAverage = singleMovieFromDB.vote_average;
-				const movieVoteCount = singleMovieFromDB.vote_count;
-
-				//**FETCH FOR SINGLE MOVIE POSTERS**/
-				fetch("https://api.themoviedb.org/3/configuration", options)
-					.then((response) => response.json())
-					.then((data) => {
-						const imagesInfoFromDB = data.images;
-						const BASE_IMG_URL = imagesInfoFromDB.base_url;
-						const IMG_POSTER_SIZE = imagesInfoFromDB.poster_sizes[3];
-						const IMG_POSTER_PATH = singleMovieFromDB.poster_path;
-						const movieImgURL = BASE_IMG_URL + IMG_POSTER_SIZE + IMG_POSTER_PATH;
-
-						const createdCard = createCard(movieImgURL, movieTitle, movieOverview, movieReleaseDate, moviePopularity, movieVoteAverage, movieVoteCount);
-						appendElements(mainContainer, createdCard);
-					});
+				fetchMoviesImg(singleMovieFromDB);
+			});
+			//**SEARCH**/
+			searchBarInput.addEventListener("input", function () {
+				// console.log(this.value.toLowerCase());
+				const inputValue = this.value.toLowerCase();
+				filterMovies(inputValue, moviesFromDB);
 			});
 		})
 		.catch((err) => {
 			console.error("ERROR =>", err);
 			handleError(mainContainer);
+		});
+
+	//**SEARCH**/
+	function filterMovies(inputValue, moviesFromDB) {
+		const filteredMovies = moviesFromDB.filter((singleMovieFromDB) => singleMovieFromDB.title.toLowerCase().includes(inputValue));
+		console.log(filteredMovies);
+		filteredMovies.forEach((singleFilteredMovie) => {
+			fetchMoviesImg(singleFilteredMovie);
+		});
+	}
+}
+
+//**FETCH FOR SINGLE MOVIE POSTERS**/
+function fetchMoviesImg(singleMovie) {
+	mainContainer.innerHTML = "";
+
+	fetch("https://api.themoviedb.org/3/configuration", options)
+		.then((response) => response.json())
+		.then((data) => {
+			const imagesInfoFromDB = data.images;
+			const BASE_IMG_URL = imagesInfoFromDB.base_url;
+			const IMG_POSTER_SIZE = imagesInfoFromDB.poster_sizes[3];
+			const movieImgConfiguration = BASE_IMG_URL + IMG_POSTER_SIZE;
+
+			const createdSingleCard = createCard(movieImgConfiguration, singleMovie);
+			appendElements(mainContainer, createdSingleCard);
 		});
 }
