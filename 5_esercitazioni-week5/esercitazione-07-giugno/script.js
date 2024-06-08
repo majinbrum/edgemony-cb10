@@ -101,11 +101,23 @@ function fetchMoviesImg(singleMovie) {
 		.then((response) => response.json())
 		.then((data) => {
 			const imagesInfoFromDB = data.images;
+			// console.log(imagesInfoFromDB);
 			const BASE_IMG_URL = imagesInfoFromDB.base_url;
-			const IMG_POSTER_SIZE = imagesInfoFromDB.poster_sizes[3];
-			const movieImgConfiguration = BASE_IMG_URL + IMG_POSTER_SIZE;
+
+			const IMG_SIZE = getImageSizeBasedOnMedia(imagesInfoFromDB);
+			const movieImgConfiguration = BASE_IMG_URL + IMG_SIZE;
 
 			const createdSingleCard = createCard(movieImgConfiguration, singleMovie);
 			appendElements(mainContainer, createdSingleCard);
 		});
+}
+
+function getImageSizeBasedOnMedia(imagesInfoFromDB) {
+	let jsMediaSize = window.matchMedia("(max-width: 1745px)").matches;
+
+	if (jsMediaSize) {
+		return imagesInfoFromDB.backdrop_sizes[1];
+	} else {
+		return imagesInfoFromDB.poster_sizes[5];
+	}
 }

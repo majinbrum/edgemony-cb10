@@ -7,10 +7,10 @@ export const createCard = (movieImgConfiguration, singleMovieFromDB) => {
 	const movieReleaseDate = singleMovieFromDB.release_date;
 	const moviePopularity = singleMovieFromDB.popularity;
 	const movieVoteCount = singleMovieFromDB.vote_count;
-	const movieVoteAverage = singleMovieFromDB.vote_average;
+	const movieVoteAverage = Math.round(singleMovieFromDB.vote_average * 10) / 10;
 
-	const IMG_POSTER_PATH = singleMovieFromDB.poster_path;
-	const movieImgURL = movieImgConfiguration + IMG_POSTER_PATH;
+	const IMG_PATH = getImagePathBasedOnMedia(singleMovieFromDB);
+	const movieImgURL = movieImgConfiguration + IMG_PATH;
 
 	//**CREATE**//
 	const movieCard = createEl("div");
@@ -44,3 +44,13 @@ export const createCard = (movieImgConfiguration, singleMovieFromDB) => {
 	appendElements(movieCard, movieImgDiv, movieContentDiv);
 	return movieCard;
 };
+
+function getImagePathBasedOnMedia(singleMovieFromDB) {
+	let jsMediaSize = window.matchMedia("(max-width: 1745px)").matches;
+
+	if (jsMediaSize) {
+		return singleMovieFromDB.backdrop_path;
+	} else {
+		return singleMovieFromDB.poster_path;
+	}
+}
