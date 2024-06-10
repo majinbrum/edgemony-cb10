@@ -1,0 +1,20 @@
+@import url("layout.css");
+@import url("movieCard.css");
+
+@font-face {
+	font-family: "Cascadia Code";
+	src: local("CascadiaCode"), url("./CascadiaCode.ttf") format("truetype");
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+
+	font-family: "Cascadia Code";
+}
+
+h1 {
+	font-size: 48px;
+	margin-bottom: 1rem;
+}
