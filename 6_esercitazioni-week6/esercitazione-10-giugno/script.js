@@ -1,123 +1,36 @@
-import { API_KEY } from "./keys.js";
-import { createCard } from "./modules/createCard.js";
-import { appendElements, querySel } from "./modules/utilities.js";
+import { GET } from "./modules/GET.js";
+import { renderData } from "./modules/renderData.js";
+import { checkPageNumber } from "./modules/filterDataToRender.js";
+import "./modules/filterDataToRender.js";
+import "./modules/searchInput.js";
+import { createListsButtons } from "./modules/createListsButtons.js";
+
 // import { handleError } from "./modules/handleError.js";
 
-//**FETCH STUFF**/
-const options = {
-	method: "GET",
-	headers: {
-		accept: "application/json",
-		Authorization: `Bearer ${API_KEY}`,
-	},
-};
-
-// "https://api.themoviedb.org/3/movie/popular?page=1"
-const BASE_URL = "https://api.themoviedb.org/3/";
-const endpointPopularMovies = "movie/popular";
-const endpointTopRatedMovies = "movie/top_rated";
-const URLpage1 = "?page=1";
-const URLpage2 = "?page=2";
-
-//**QUERY ELEMENTS**/
-const mainContainer = querySel("main");
-const headerContainer = querySel("header");
-
-//**CHANGE CATEGORY**/
-const btnPopularMovies = querySel(".popular-movies-btn");
-const btnTopRatedMovies = querySel(".top-rated-btn");
-
-//**SEARCH**/
-const searchBarInput = querySel(".search-bar-input");
-
-//**CHANGE PAGE**/
-const btnPage1 = querySel(".page-1-btn");
-const btnPage2 = querySel(".page-2-btn");
-
-// headerContainer.addEventListener("click", (event) => {
-// 	switch (event.target) {
-// 		case btnPopularMovies:
-// 			fetchMovies(endpointPopularMovies, URLpage1);
-// 			break;
-
-// 		case btnTopRatedMovies:
-// 			fetchMovies(endpointTopRatedMovies, URLpage1);
-// 			break;
-
-// 		case btnPage1:
-// 			fetchMovies(endpointPopularMovies, URLpage1);
-// 			break;
-
-// 		case btnPage2:
-// 			fetchMovies(endpointPopularMovies, URLpage2);
-// 			break;
-
-// 		default:
-// 			console.log("ups!");
-// 	}
-// });
-
-//**FETCH**/
-// function fetchMovies(movieCategory, URLpage) {
-// 	fetch(BASE_URL + movieCategory + URLpage, options)
-// 		.then((response) => response.json())
-// 		.then((data) => {
-// 			const moviesFromDB = data.results;
-// 			mainContainer.innerHTML = "";
-
-// 			moviesFromDB.forEach((singleMovieFromDB) => {
-// 				const createdSingleCard = createCard(singleMovieFromDB);
-// 				appendElements(mainContainer, createdSingleCard);
-// 			});
-// 		})
-// 		.catch((err) => {
-// 			console.error("ERROR =>", err);
-// 			// handleError(mainContainer);
-// 		});
-// }
-
-let pageNumber = 1;
-
-const GET = async (pageNumber) => {
-	const response = await fetch(`https://api.themoviedb.org/3/movie/popular?page=${pageNumber}`, options);
-	const data = await response.json();
-
-	return data;
-};
+export const currentCategoryEndpoint = "movie/";
+const currentListEndpoint = "popular";
 
 //**!FIRST FETCH!**/
+const dataObject = await GET(currentCategoryEndpoint, currentListEndpoint, 1);
+const dataArray = dataObject.results;
+renderData(dataArray);
 
-const fetchData = async (pageNumber) => {
-	const dataArray = await GET(pageNumber);
-	const moviesData = dataArray.results;
-	renderList(moviesData);
-};
+export const MAX_CURRENT_PAGES = dataObject.total_pages;
+checkPageNumber(1);
 
-const renderList = (moviesData) => {
-	mainContainer.innerHTML = "";
+export const movieLists = ["now_playing", "popular", "top_rated", "upcoming"];
+export const tvSeriesLists = ["airing_today", "on_the_air", "popular", "top_rated"];
 
-	moviesData.forEach((singleMovieFromDB) => {
-		const createdSingleCard = createCard(singleMovieFromDB);
-		appendElements(mainContainer, createdSingleCard);
-	});
-};
+checkCurrentCategory(currentCategoryEndpoint);
 
-//**PAGES**/
-const btnPagesNavbar = querySel(".pages-navbar");
-const btnPageBack = querySel(".page-back-btn");
-const btnPageNext = querySel(".page-next-btn");
-
-btnPagesNavbar.addEventListener("click", (e) => {
-	if (e.target === btnPageNext) {
-		pageNumber++;
+export function checkCurrentCategory(currentCategoryEndpoint) {
+	if (currentCategoryEndpoint === "movie/") {
+		createListsButtons(movieLists);
+		console.log(currentCategoryEndpoint);
 	}
 
-	if (e.target === btnPageBack) {
-		pageNumber--;
+	if (currentCategoryEndpoint === "tv/") {
+		createListsButtons(tvSeriesLists);
+		console.log(currentCategoryEndpoint);
 	}
-
-	console.log(pageNumber);
-	fetchData(pageNumber);
-});
-
-fetchData(pageNumber);
+}
