@@ -14,6 +14,7 @@ const currentListEndpoint = "popular";
 const dataObject = await GET(currentCategoryEndpoint, currentListEndpoint, 1);
 const dataArray = dataObject.results;
 renderData(dataArray);
+console.log(dataArray);
 
 export const MAX_CURRENT_PAGES = dataObject.total_pages;
 checkPageNumber(1);

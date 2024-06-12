@@ -1,0 +1,28 @@
+Discover - Filter by Genre
+
+Tip: For TV Show the procedure is similar.
+
+First you need to have the list of Genres with their IDs.
+
+The list of Genre IDs is here, for Movie and TV Show.
+get/genre/movie/list - https://developers.themoviedb.org/3/genres/get-movie-list
+get/genre/tv/list - https://developers.themoviedb.org/3/genres/get-tv-list
+
+Make an API Request of type get / genre / movie / list
+Get the list of official genres for movies.
+https://developers.themoviedb.org/3/genres/get-movie-list
+
+For example, the Comedy Genre ID for movies is 35.
+
+Knowing the Genre ID you want, make an API Request of type get / discover / movie
+https://developers.themoviedb.org/3/discover/movie-discover
+And use the with_genres and/or without_genres parameter.
+More than one genre can be searched using the comma or pipe feature
+
+Also note that a number of filters support being comma (,) or pipe (|) separated.
+Comma's are treated like an AND and query while Pipe's are an OR.
+
+//**GET TO SEARCH**/
+// fetch("https://api.themoviedb.org/3/search/movie?query=ciao", options);
+
+// fetch("https://api.themoviedb.org/3/search/tv?query=ciao", options);
