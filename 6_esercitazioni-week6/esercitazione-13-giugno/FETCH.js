@@ -10,20 +10,29 @@ const productEndpoint = "api/v1/products";
 // };
 
 export const POST = async (newProduct) => {
-	const res = await fetch(`${BASE_URL}${productEndpoint}`, {
-		method: "POST",
-		headers: {
-			accept: "*/*",
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify(newProduct),
-	});
+	try {
+		const res = await fetch(`${BASE_URL}${productEndpoint}`, {
+			method: "POST",
+			headers: {
+				accept: "*/*",
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(newProduct),
+		});
 
-	const data = await res.json();
-	console.log("newProductToPost", data);
-	console.log("addedProductId", data.id);
-	// return data;
-	return data.id;
+		const data = await res.json();
+		console.log("newProductToPost", data);
+		console.log("addedProductId", data.id);
+
+		if (data.error) {
+			console.log(data);
+			throw data;
+		}
+		// return data;
+		return data.id;
+	} catch (err) {
+		console.error(err);
+	}
 };
 
 // const newObjectTest = {
@@ -37,45 +46,87 @@ export const POST = async (newProduct) => {
 // POST(newObjectTest);
 
 export const DELETE = async (productId) => {
-	const res = await fetch(`${BASE_URL}${productEndpoint}/${productId}`, {
-		method: "DELETE",
-	});
+	try {
+		const res = await fetch(`${BASE_URL}${productEndpoint}/${productId}`, {
+			method: "DELETE",
+		});
 
-	const data = await res.json();
-	console.log("deleted?", data);
-	return data;
+		const data = await res.json();
+		console.log("deleted?", data);
+		if (data.error) {
+			console.log(data);
+			throw data;
+		}
+		return data;
+	} catch (err) {
+		console.error(err);
+	}
 };
 
 export const GET = async (id = "") => {
-	if (id !== "") {
-		const res = await fetch(`${BASE_URL}${productEndpoint}/${id}`, {
-			method: "GET",
-		});
-		const data = await res.json();
-		console.log("getProduct", data);
-		console.log("getProductID", data.id);
+	try {
+		if (id !== "") {
+			const res = await fetch(`${BASE_URL}${productEndpoint}/${id}`, {
+				method: "GET",
+			});
+			const data = await res.json();
+			console.log("getProduct", data);
+			console.log("getProductID", data.id);
+
+			if (data.error) {
+				console.log(data);
+				throw data;
+			}
+			// return data.id;
+			return data;
+		} else {
+			const res = await fetch(`${BASE_URL}${productEndpoint}`, {
+				method: "GET",
+			});
+			const data = await res.json();
+			console.log("getProduct", data);
+
+			if (data.error) {
+				console.log(data);
+				throw data;
+			}
+			return data;
+		}
 		// return data.id;
-		return data;
-	} else {
-		const res = await fetch(`${BASE_URL}${productEndpoint}`, {
-			method: "GET",
-		});
-		const data = await res.json();
-		console.log("getProduct", data);
-		return data;
+	} catch (err) {
+		console.error(err);
 	}
-	// return data.id;
 };
 
-// export const GET = async () => {
-// 	const res = await fetch(`${BASE_URL}${productEndpoint}`, {
-// 		method: "GET",
-// 	});
+export const PUT = async (product) => {
+	try {
+		const res = await fetch(` ${BASE_URL}${productEndpoint}`, {
+			method: "PUT",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(product),
+		});
 
-// 	const data = await res.json();
-// 	// console.log("getProducts", data);
-// 	// console.log("getProductsID", data.id);
-// 	return data;
-// };
+		const data = res.json();
+		if (data.error) {
+			console.log(data);
+			throw data;
+		}
 
-// GET();
+		return data;
+	} catch (err) {
+		console.error(err);
+	}
+};
+
+//*************************************************//
+// try {
+// 	if (data.error) {
+// 		console.log(data);
+// 		throw data;
+// 	}
+// } catch (err) {
+// 	errorHandler(err, mainContainerEl);
+// }
+//

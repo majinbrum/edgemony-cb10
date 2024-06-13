@@ -1,6 +1,7 @@
 import { POST } from "./FETCH.js";
 import { DELETE } from "./FETCH.js";
 import { GET } from "./FETCH.js";
+import { PUT } from "./FETCH.js";
 
 function querySel(selector) {
 	return document.querySelector(selector);
@@ -13,12 +14,9 @@ const render = async (id = "") => {
 	const data = await GET(id);
 	renderProducts(data);
 };
-
 render();
 
-// const productsGET = await GET();
-// renderProducts(productsGET);
-
+///***QUERY ELEMENTS***///
 const titleInput = querySel(".title");
 const priceInput = querySel(".price");
 const descriptionInput = querySel(".description");
@@ -26,6 +24,29 @@ const categoryIdInput = querySel(".category-id");
 const imagesInput = querySel(".images");
 const postBtn = querySel(".button-post");
 
+const saveEditBtn = querySel(".button-save");
+
+///***POST WITH INPUT FIELDS***///
+const postProduct = async () => {
+	const newProductToPost = {
+		title: titleInput.value,
+		price: priceInput.value,
+		description: descriptionInput.value,
+		categoryId: categoryIdInput.value,
+		images: [imagesInput.value],
+	};
+
+	const newProductID = await POST(newProductToPost);
+	render(newProductID);
+};
+
+postBtn.onclick = async (e) => {
+	e.preventDefault();
+	postProduct();
+	resetInputs();
+};
+
+///***SEARCH BY ID***///
 const searchIdBtn = querySel(".button-search");
 
 searchIdBtn.addEventListener("click", async function (e) {
@@ -42,45 +63,15 @@ searchIdBtn.addEventListener("click", async function (e) {
 	renderProducts(productById);
 });
 
-postBtn.onclick = async (e) => {
-	e.preventDefault();
-	const newProductToPost = {
-		title: titleInput.value,
-		price: priceInput.value,
-		description: descriptionInput.value,
-		categoryId: categoryIdInput.value,
-		images: [imagesInput.value],
-	};
-
-	const newProductID = await POST(newProductToPost);
-	render(newProductID);
-
-	titleInput.value = "";
-	priceInput.value = "";
-	descriptionInput.value = "";
-	categoryIdInput.value = "";
-	imagesInput.value = "";
-};
-
-function renderProducts(arrayOrID) {
-	mainEl.innerHTML = "";
-	if (arrayOrID.hasOwnProperty("id")) {
-		/// if (typeof arrayOrID === "number") {
-		createSingleProductEl(arrayOrID);
-	} else {
-		arrayOrID.forEach((singleProduct) => {
-			createSingleProductEl(singleProduct);
-		});
-	}
-}
-
 function createSingleProductEl(singleProduct) {
 	const singleProductDiv = document.createElement("div");
 	singleProductDiv.className = "added-product-div";
 	const singleProductName = document.createElement("p");
 	singleProductName.textContent = singleProduct.title;
+
 	const singleProductDelete = document.createElement("button");
 	singleProductDelete.textContent = "DELETE";
+
 	const singleProductEdit = document.createElement("button");
 	singleProductEdit.textContent = "EDIT";
 
@@ -92,4 +83,58 @@ function createSingleProductEl(singleProduct) {
 		DELETE(singleProduct.id);
 		render();
 	});
+
+	singleProductEdit.addEventListener("click", function () {
+		console.log(singleProduct);
+
+		titleInput.value = singleProduct.title;
+		priceInput.value = singleProduct.price;
+		descriptionInput.value = singleProduct.description;
+		categoryIdInput.value = singleProduct.category.id;
+		imagesInput.value = singleProduct.images;
+	});
+}
+
+saveEditBtn.addEventListener("click", function () {
+	console.log("coap");
+	// putProduct(singleProduct);
+	// resetInputs();
+});
+
+const putProduct = async (singleProduct) => {
+	singleProduct = {
+		title: titleInput.value,
+		price: priceInput.value,
+		description: descriptionInput.value,
+		categoryId: categoryIdInput.value,
+		images: [imagesInput.value],
+	};
+
+	console.log(singleProduct);
+	// console.log(singleProduct.id);
+	// const editedProduct = await PUT(singleProduct.id, productToPut);
+	// console.log(await PUT(singleProduct));
+	// console.log(editedProduct);
+	// render(editedProduct);
+};
+
+///***GENERIC FUNCTIONS***///
+function resetInputs() {
+	titleInput.value = "";
+	priceInput.value = "";
+	descriptionInput.value = "";
+	categoryIdInput.value = "";
+	imagesInput.value = "";
+}
+
+function renderProducts(arrayOrID) {
+	mainEl.innerHTML = "";
+	if (arrayOrID.hasOwnProperty("id")) {
+		/// if (typeof arrayOrID === "number") {
+		createSingleProductEl(arrayOrID);
+	} else {
+		arrayOrID.forEach((singleProduct) => {
+			createSingleProductEl(singleProduct);
+		});
+	}
 }
