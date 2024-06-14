@@ -9,7 +9,27 @@ const productEndpoint = "api/v1/products";
 // 	body: JSON.stringify(),
 // };
 
-export const POST = async (newProduct) => {
+export const GET = async (id = "") => {
+	try {
+		const res = await fetch(`${BASE_URL}${productEndpoint}/${id}?limit=8&offset=0`, {
+			method: "GET",
+		});
+		const data = await res.json();
+		console.log("getProduct", data);
+		console.log("getProductID", data.id);
+
+		if (data.error) {
+			console.log(data);
+			throw data;
+		}
+
+		return data;
+	} catch (err) {
+		console.error(err);
+	}
+};
+
+export const POST = async (newObject) => {
 	try {
 		const res = await fetch(`${BASE_URL}${productEndpoint}`, {
 			method: "POST",
@@ -17,12 +37,12 @@ export const POST = async (newProduct) => {
 				accept: "*/*",
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify(newProduct),
+			body: JSON.stringify(newObject),
 		});
 
 		const data = await res.json();
-		console.log("newProductToPost", data);
-		console.log("addedProductId", data.id);
+		console.log("newObjectToPost", data);
+		console.log("addedObjectId", data.id);
 
 		if (data.error) {
 			console.log(data);
@@ -45,9 +65,9 @@ export const POST = async (newProduct) => {
 
 // POST(newObjectTest);
 
-export const DELETE = async (productId) => {
+export const DELETE = async (id) => {
 	try {
-		const res = await fetch(`${BASE_URL}${productEndpoint}/${productId}`, {
+		const res = await fetch(`${BASE_URL}${productEndpoint}/${id}`, {
 			method: "DELETE",
 		});
 
@@ -63,52 +83,18 @@ export const DELETE = async (productId) => {
 	}
 };
 
-export const GET = async (id = "") => {
+// posso fare una funzione unica UPDATE in cui decido di volta in volta se usare PATCH o PUT
+export const UPDATE = async (id, object, method = "PUT") => {
 	try {
-		if (id !== "") {
-			const res = await fetch(`${BASE_URL}${productEndpoint}/${id}`, {
-				method: "GET",
-			});
-			const data = await res.json();
-			console.log("getProduct", data);
-			console.log("getProductID", data.id);
-
-			if (data.error) {
-				console.log(data);
-				throw data;
-			}
-			// return data.id;
-			return data;
-		} else {
-			const res = await fetch(`${BASE_URL}${productEndpoint}`, {
-				method: "GET",
-			});
-			const data = await res.json();
-			console.log("getProduct", data);
-
-			if (data.error) {
-				console.log(data);
-				throw data;
-			}
-			return data;
-		}
-		// return data.id;
-	} catch (err) {
-		console.error(err);
-	}
-};
-
-export const PUT = async (product) => {
-	try {
-		const res = await fetch(` ${BASE_URL}${productEndpoint}`, {
-			method: "PUT",
+		const res = await fetch(` ${BASE_URL}${productEndpoint}/${id}`, {
+			method: method,
 			headers: {
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify(product),
+			body: JSON.stringify(object),
 		});
 
-		const data = res.json();
+		const data = await res.json();
 		if (data.error) {
 			console.log(data);
 			throw data;
@@ -121,6 +107,53 @@ export const PUT = async (product) => {
 };
 
 //*************************************************//
+
+// export const PUT = async (id, object) => {
+// 	try {
+// 		const res = await fetch(` ${BASE_URL}${productEndpoint}/${id}`, {
+// 			method: "PUT",
+// 			headers: {
+// 				"Content-Type": "application/json",
+// 			},
+// 			body: JSON.stringify(object),
+// 		});
+
+// 		const data = await res.json();
+// 		if (data.error) {
+// 			console.log(data);
+// 			throw data;
+// 		}
+
+// 		return data;
+// 	} catch (err) {
+// 		console.error(err);
+// 	}
+// };
+
+// export const PATCH = async (id, object) => {
+// 	try {
+// 		const res = await fetch(` ${BASE_URL}${productEndpoint}/${id}`, {
+// 			method: "PATCH",
+// 			headers: {
+// 				"Content-Type": "application/json",
+// 			},
+// 			body: JSON.stringify(object),
+// 		});
+
+// 		const data = await res.json();
+// 		if (data.error) {
+// 			console.log(data);
+// 			throw data;
+// 		}
+
+// 		return data;
+// 	} catch (err) {
+// 		console.error(err);
+// 	}
+// };
+
+//*************************************************//
+
 // try {
 // 	if (data.error) {
 // 		console.log(data);

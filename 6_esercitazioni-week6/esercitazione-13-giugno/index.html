@@ -26,7 +26,7 @@
 		</style>
 	</head>
 	<body>
-		<form action="submit" method="post">
+		<form method="post">
 			<div>
 				<label for="title">Title</label>
 				<input class="title" type="text" placeholder="title" name="title" />
@@ -53,10 +53,11 @@
 			</div>
 
 			<button class="button-post">POST</button>
-			<button class="button-save">SAVE</button>
 		</form>
 
-		<form action="submit" method="get">
+		<button class="button-save">SAVE</button>
+
+		<form method="get">
 			<div>
 				<label for="id-search">Cerca per ID:</label>
 				<input class="id-search" type="number" placeholder="Product id" name="id-search" />

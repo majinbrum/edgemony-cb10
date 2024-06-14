@@ -1,7 +1,4 @@
-import { POST } from "./FETCH.js";
-import { DELETE } from "./FETCH.js";
-import { GET } from "./FETCH.js";
-import { PUT } from "./FETCH.js";
+import { POST, DELETE, GET, UPDATE } from "./FETCH.js";
 
 function querySel(selector) {
 	return document.querySelector(selector);
@@ -48,21 +45,21 @@ postBtn.onclick = async (e) => {
 
 ///***SEARCH BY ID***///
 const searchIdBtn = querySel(".button-search");
+const searchIdInputEl = querySel(".id-search");
 
 searchIdBtn.addEventListener("click", async function (e) {
 	e.preventDefault();
 
-	const searchIdInputEl = querySel(".id-search");
 	const searchIdInputValue = searchIdInputEl.value;
 
 	const productById = await GET(searchIdInputValue);
 	console.log(productById);
 
-	searchIdInputEl.value = "";
-
 	renderProducts(productById);
+	searchIdInputEl.value = "";
 });
 
+///***CREATE ELEMENTS***///
 function createSingleProductEl(singleProduct) {
 	const singleProductDiv = document.createElement("div");
 	singleProductDiv.className = "added-product-div";
@@ -91,18 +88,16 @@ function createSingleProductEl(singleProduct) {
 		priceInput.value = singleProduct.price;
 		descriptionInput.value = singleProduct.description;
 		categoryIdInput.value = singleProduct.category.id;
-		imagesInput.value = singleProduct.images;
+		imagesInput.value = singleProduct.images.join("").replace(/[\[\]"]/g, "");
+		searchIdInputEl.value = singleProduct.id;
 	});
 }
 
-saveEditBtn.addEventListener("click", function () {
-	console.log("coap");
-	// putProduct(singleProduct);
-	// resetInputs();
-});
+///***UPDATE***///
+saveEditBtn.addEventListener("click", async function () {
+	const id = searchIdInputEl.value;
 
-const putProduct = async (singleProduct) => {
-	singleProduct = {
+	const objectToUpdateProduct = {
 		title: titleInput.value,
 		price: priceInput.value,
 		description: descriptionInput.value,
@@ -110,13 +105,9 @@ const putProduct = async (singleProduct) => {
 		images: [imagesInput.value],
 	};
 
-	console.log(singleProduct);
-	// console.log(singleProduct.id);
-	// const editedProduct = await PUT(singleProduct.id, productToPut);
-	// console.log(await PUT(singleProduct));
-	// console.log(editedProduct);
-	// render(editedProduct);
-};
+	const updatedProduct = await UPDATE(id, objectToUpdateProduct);
+	console.log(updatedProduct);
+});
 
 ///***GENERIC FUNCTIONS***///
 function resetInputs() {
