@@ -6,18 +6,47 @@ main {
 	gap: 2rem 0;
 }
 
-main article {
-	border-radius: 2rem;
-	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-	padding: 2rem;
+@keyframes gradient-border {
+	0% {
+		background-position: 0 0, 100% 50%; /* Starting positions */
+	}
+	50% {
+		background-position: 100% 50%, 0 0; /* Midway positions */
+	}
+	100% {
+		background-position: 0 0, 100% 50%; /* Ending positions */
+	}
+}
 
-	display: flex;
-	flex-direction: column;
-	gap: 1rem 0;
+main article {
+	padding: 2rem;
+	border: solid 0.2rem transparent;
+	border-radius: 1rem;
+	background: linear-gradient(#fff, #fff) padding-box, linear-gradient(to right, #86efac, #3b82f6, #9333ea) border-box;
+	background-position: 0 0, /* Position of the first gradient (content area) */ 100% 50%; /* Position of the second gradient (border) */
+	background-size: 200% 200%; /* Set background size to allow movement */
+	box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+	transition-property: background, box-shadow, transform;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 150ms;
+}
+
+main article:hover {
+	box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+	animation: gradient-border 2s ease infinite;
 }
 
 main article h3 {
-	color: rgb(107 114 128);
+	margin-bottom: 0.5rem;
+
+	font-weight: 400;
+	color: var(--light);
+}
+
+main article p {
+	margin-top: 0.5rem;
+	margin-bottom: 2rem;
 }
 
 main article .tags-div {
@@ -26,8 +55,9 @@ main article .tags-div {
 }
 
 main article .article-tag {
-	color: rgb(147 51 234);
-	background-color: rgb(243 232 255);
+	font-weight: 500;
+	color: var(--darkAccent);
+	background-color: var(--lightAccent);
 	padding: 0.1rem 0.8rem;
 	border-radius: 2rem;
 	white-space: nowrap;
@@ -40,9 +70,25 @@ main article .article-tag {
 	}
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
 	div#root main {
 		grid-column: span 3;
 		order: 1;
+	}
+}
+
+@media (min-width: 1200px) {
+	div#root main {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 2rem;
+		grid-auto-rows: min-content;
+		align-items: stretch;
+	}
+
+	main article {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 	}
 }

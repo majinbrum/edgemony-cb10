@@ -1,17 +1,43 @@
 /** APP STYLE **/
 :root {
-	--headerBg: #f97171;
-	--mainBg: #fff;
-	--leftBg: #f5d55f;
-	--rightBg: #c5ed77;
-	--footerBg: #72c2f1;
+	--dark: #111827;
+	--light: #6b7280;
+	--white: #fff;
+
+	--lightAccent: #f9efd6;
+	--mediumAccent: #a483e1;
+	--darkAccent: #696ed4;
+
+	/* --lightAccent: #f3e8ff;
+	--darkAccent: #9333ea; */
+	/* --accent1: #f5d55f;
+	--accent2: #c5ed77; */
 }
 
 * {
-	font-family: sans-serif;
+	font-family: "Inter", sans-serif;
+	font-optical-sizing: auto;
+	/* <weight>: Use a value from 100 to 900 */
 	text-decoration: none;
 	list-style: none;
-	color: inherit;
+	color: var(--dark);
+}
+
+h1 {
+	font-size: 1.6rem;
+}
+
+h2 {
+	font-size: 1.3rem;
+}
+
+h3,
+h4 {
+	font-size: 0.8rem;
+}
+
+p {
+	font-size: 14px;
 }
 
 div#root {
@@ -26,7 +52,7 @@ div#root {
 	}
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
 	div#root {
 		grid-template-columns: repeat(4, 1fr);
 		grid-template-rows: auto 1fr auto;

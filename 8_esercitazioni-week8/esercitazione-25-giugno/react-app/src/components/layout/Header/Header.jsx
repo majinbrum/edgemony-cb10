@@ -3,7 +3,9 @@ import "./Header.css";
 function Header() {
 	return (
 		<header>
-			<img src='https://picsum.photos/50' alt='Logo' />
+			<div className='logo'>
+				<img src='https://cdn.dribbble.com/userupload/9808588/file/original-392a3eac13328b1b5eec16783082d92e.jpg?resize=400x0' alt='Logo' width='400' height='300' />
+			</div>
 			<Nav />
 		</header>
 	);

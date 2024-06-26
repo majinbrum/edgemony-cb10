@@ -41,9 +41,8 @@ footer nav > ul > li > a {
 	}
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
 	div#root footer {
-		grid-column: span 4;
 		order: 3;
 	}
 }

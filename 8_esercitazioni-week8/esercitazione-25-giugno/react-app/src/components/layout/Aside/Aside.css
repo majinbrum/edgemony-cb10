@@ -14,7 +14,7 @@ aside img {
 	}
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
 	div#root aside {
 		grid-column: span 1;
 		order: 2;

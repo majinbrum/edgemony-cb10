@@ -16,20 +16,24 @@ function Article(props) {
 	const { title, body, author, reactions, views, children } = props;
 	return (
 		<article>
-			<h3>{author}</h3>
-			<h2>{title}</h2>
-			<p>{body}</p>
-			<div className='tags-div'>
-				{children.map((child, index) => (
-					<ArticleTag key={`${index}+${child}`} tag={child} />
-				))}
+			<div>
+				<h3>{author}</h3>
+				<h2>{title}</h2>
+				<p>{body}</p>
+			</div>
+			<div className='article-info'>
+				<div className='tags-div'>
+					{children.map((child, index) => (
+						<ArticleTag key={`${index}+${child}`} tag={child} />
+					))}
+				</div>
 			</div>
 		</article>
 	);
 }
 
 function ArticleTag({ tag }) {
-	return <span className='article-tag'>{tag[0].toUpperCase() + tag.slice(1)}</span>;
+	return <h4 className='article-tag'>{tag[0].toUpperCase() + tag.slice(1)}</h4>;
 }
 
 export { Main };
