@@ -1,48 +1,42 @@
 /** APP STYLE **/
 :root {
-	--dark: #08292e;
-	--light: #6b7280;
-	--white: #fff;
-
-	--lightAccent: #f3e8ff;
-	--mediumAccent: #a483e1;
-	--darkAccent: #696ed4;
-
-	/*--dark: #111827;
-	--lightAccent: #f9efd6;
-	--darkAccent: #9333ea; */
-	/* --accent1: #f5d55f;
-	--accent2: #c5ed77; */
+	--bg: #f0f0f0;
+	--dark: #010101;
+	--minus: #ff4500;
+	--plus: #008001;
+	--light: #fff;
 }
 
 * {
-	font-family: "Inter", sans-serif;
-	font-optical-sizing: auto;
-	/* <weight>: Use a value from 100 to 900 */
-	text-decoration: none;
-	list-style: none;
+	font-family: "Poppins", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.container {
+	width: 100vw;
+	height: 100dvh;
+	background-color: var(--bg);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.counter-container {
+	width: 200px;
+	height: 200px;
+	padding: 1rem;
+	background-color: var(--light);
+	border-radius: 1rem;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.counter-container .count {
+	font-size: 80px;
 	color: var(--dark);
-}
-
-h1 {
-	font-size: 1.6rem;
-}
-
-h2 {
-	font-size: 1.3rem;
-}
-
-h3,
-h4 {
-	font-size: 0.8rem;
-}
-
-p {
-	font-size: 14px;
-}
-
-@media (min-width: 768px) {
-}
-
-@media (min-width: 1000px) {
 }

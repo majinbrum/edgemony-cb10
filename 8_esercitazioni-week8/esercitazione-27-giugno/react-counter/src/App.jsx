@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ButtonsList } from "./components/ButtonsList/ButtonsList";
+import { Counter } from "./components/Counter/Counter";
 import "./styles/layout.css";
 
 function App() {
@@ -7,8 +7,10 @@ function App() {
 	return (
 		<>
 			<div className='container'>
-				<div>{count}</div>
-				<ButtonsList count={count} setCount={setCount} />
+				<div className='counter-container'>
+					<div className='count'>{count}</div>
+					<Counter count={count} setCount={setCount} />
+				</div>
 			</div>
 		</>
 	);

@@ -1,0 +1,20 @@
+.btn {
+	padding: 0.5rem 0.8rem;
+	border: none;
+	cursor: pointer;
+}
+
+.btn.reset {
+	background-color: var(--bg);
+	color: var(--dark);
+}
+
+.btn.minus {
+	background-color: var(--minus);
+	color: var(--light);
+}
+
+.btn.plus {
+	background-color: var(--plus);
+	color: var(--light);
+}
