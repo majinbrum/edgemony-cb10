@@ -9,8 +9,11 @@ function App() {
 	return (
 		<>
 			<div className='container'>
-				<Display displayContent={displayContent} />
-				<Keyboard displayContent={displayContent} setDisplayContent={setDisplayContent} />
+				<h1>Calculator</h1>
+				<div className='calculator'>
+					<Display displayContent={displayContent} />
+					<Keyboard displayContent={displayContent} setDisplayContent={setDisplayContent} />
+				</div>
 			</div>
 		</>
 	);

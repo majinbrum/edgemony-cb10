@@ -1,0 +1,11 @@
+.keyboard {
+	font-size: 1.5rem;
+	background-color: var(--keyboardBg);
+
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+	gap: 2rem;
+	padding: 2rem 2rem 6rem;
+	border-radius: 2rem;
+}

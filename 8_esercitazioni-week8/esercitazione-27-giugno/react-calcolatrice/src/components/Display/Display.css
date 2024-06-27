@@ -1,0 +1,41 @@
+.display {
+	background-color: var(--displayBg);
+	color: var(--displayText);
+	padding: 2rem;
+
+	height: 100%;
+	display: flex;
+	justify-content: end;
+	align-items: end;
+	text-align: right;
+
+	position: relative;
+}
+
+.display h2 {
+	font-weight: 500;
+	word-break: break-all;
+}
+
+.color-mode {
+	position: absolute;
+	top: 2rem;
+	left: calc(50% - (0.6rem + 30px));
+	padding: 0.6rem;
+	border-radius: 0.2rem;
+	background-color: var(--keyboardBg);
+}
+
+.color-mode button {
+	width: 30px;
+	height: 30px;
+	border: none;
+	border-radius: 0.2rem;
+	background-color: transparent;
+	color: var(--displayText);
+	cursor: pointer;
+}
+
+.color-mode button:hover {
+	background-color: var(--displayBg);
+}
