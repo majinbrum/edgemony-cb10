@@ -1,6 +1,5 @@
 header {
 	background-color: #fff;
-	color: var(--light);
 	margin: 1rem;
 	display: flex;
 	justify-content: space-between;
@@ -26,8 +25,14 @@ header nav ul {
 	gap: 0 1rem;
 }
 
+header nav a {
+	color: var(--light);
+	font-weight: 400;
+}
+
 header nav a:hover {
-	color: var(--mediumAccent);
+	color: var(--darkAccent);
+	font-weight: 500;
 }
 
 @media (min-width: 768px) {

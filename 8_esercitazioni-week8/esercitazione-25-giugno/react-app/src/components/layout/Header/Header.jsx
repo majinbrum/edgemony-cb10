@@ -12,7 +12,7 @@ function Header() {
 }
 
 function Nav() {
-	const navItems = [{ label: "Articoli" }, { label: "Autori" }, { label: "Chi siamo" }];
+	const navItems = [{ label: "About" }, { label: "Resources" }, { label: "Connect" }];
 
 	return (
 		<nav>

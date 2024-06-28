@@ -1,5 +1,8 @@
 aside {
 	background-color: var(--rightBg);
+	height: 100%;
+	max-height: 100dvh;
+	margin: 2rem;
 }
 
 aside img {

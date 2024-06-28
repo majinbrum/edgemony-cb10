@@ -1,5 +1,5 @@
 import "./Main.css";
-import posts from "../../../posts.json";
+import posts from "../../../assets/posts.json";
 
 function Main() {
 	console.log(posts);

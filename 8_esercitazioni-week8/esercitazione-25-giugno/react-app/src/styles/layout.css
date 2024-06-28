@@ -1,14 +1,15 @@
 /** APP STYLE **/
 :root {
-	--dark: #111827;
+	--dark: #08292e;
 	--light: #6b7280;
 	--white: #fff;
 
-	--lightAccent: #f9efd6;
+	--lightAccent: #f3e8ff;
 	--mediumAccent: #a483e1;
 	--darkAccent: #696ed4;
 
-	/* --lightAccent: #f3e8ff;
+	/*--dark: #111827;
+	--lightAccent: #f9efd6;
 	--darkAccent: #9333ea; */
 	/* --accent1: #f5d55f;
 	--accent2: #c5ed77; */
@@ -20,7 +21,8 @@
 	/* <weight>: Use a value from 100 to 900 */
 	text-decoration: none;
 	list-style: none;
-	color: var(--dark);
+	/* color: var(--dark); */
+	color: inherit;
 }
 
 h1 {
@@ -42,7 +44,7 @@ p {
 
 div#root {
 	display: grid;
-	min-height: 100dvh;
+	/* min-height: 100dvh; */
 }
 
 @media (min-width: 768px) {
