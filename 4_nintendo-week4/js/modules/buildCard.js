@@ -12,6 +12,7 @@ export const buildCard = (obj) => {
 	const cardDiv = createEl("div", "className", "card");
 	const cardImgDiv = createEl("div", "className", "card-img");
 	const cardImg = createEl("img", "src", obj.img);
+	cardImg.loading = "lazy";
 	const cardContentDiv = createEl("div", "className", "card-content");
 	const cardContentInfoDiv = createEl("div", "className", "info");
 	const cardContentInfoName = createEl("h3", "textContent", obj.name);

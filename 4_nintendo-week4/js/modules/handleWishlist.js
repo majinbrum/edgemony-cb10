@@ -1,6 +1,6 @@
 import { wishlistList } from "../../script.js";
 import { wishlist } from "../data/wishlist.js";
-import { genCards } from "./genCards.js";
+import { createCardsAndAppendToList } from "./genCards.js";
 import { btnUnfiltered, btnFilterGames, btnFilterMerch, filterCategories, wishlistFiltered } from "./filterCategories.js";
 
 const handleWishlistIcon = (obj, icon) => {
@@ -24,7 +24,7 @@ const handleWishlistItems = (obj) => {
 
 	wishlistList.innerHTML = "";
 	if (btnUnfiltered.classList.contains("active")) {
-		genCards(wishlist, wishlistList);
+		createCardsAndAppendToList(wishlist, wishlistList);
 	} else if (btnFilterGames.classList.contains("active")) {
 		filterCategories(btnFilterGames, "games", wishlistFiltered);
 	} else if (btnFilterMerch.classList.contains("active")) {

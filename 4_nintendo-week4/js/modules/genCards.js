@@ -2,15 +2,15 @@ import { buildCard } from "./buildCard.js";
 import { randomToWishlist } from "./addRandomItem.js";
 
 // TODO 2: generare tante card, quanti sono gli obj contenuti negli array
-const genCards = (array, list) => {
-	array.forEach((singleCard) => {
-		genSingleCard(list, singleCard);
+const createCardsAndAppendToList = (items, listEl) => {
+	items.forEach((singleCard) => {
+		genSingleCard(listEl, singleCard);
 	});
 };
 
-const genSingleCard = (list, singleCard) => {
+const genSingleCard = (listEl, singleCard) => {
 	const card = buildCard(singleCard);
-	list.append(card);
+	listEl.append(card);
 	if (singleCard === randomToWishlist) {
 		card.scrollIntoView({
 			behavior: "smooth",
@@ -18,4 +18,4 @@ const genSingleCard = (list, singleCard) => {
 	}
 };
 
-export { genCards, genSingleCard };
+export { createCardsAndAppendToList, genSingleCard };

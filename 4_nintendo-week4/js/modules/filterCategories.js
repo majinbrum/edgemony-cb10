@@ -1,6 +1,6 @@
 import { selectEl, wishlistList } from "../../script.js";
 import { wishlist } from "../data/wishlist.js";
-import { genCards } from "./genCards.js";
+import { createCardsAndAppendToList } from "./genCards.js";
 
 const buttons = document.querySelectorAll(".wishlist-buttons button");
 export const btnUnfiltered = selectEl(".btn-unfiltered");
@@ -23,5 +23,5 @@ export const filterCategories = (btn, category, array) => {
 		wishlistFiltered.splice(0, wishlistFiltered.length, ...wishlist.filter((singleWishlistObj) => singleWishlistObj.category === category));
 	}
 
-	genCards(array, wishlistList);
+	createCardsAndAppendToList(array, wishlistList);
 };

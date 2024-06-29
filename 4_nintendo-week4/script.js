@@ -1,7 +1,7 @@
 import { games } from "./js/data/games.js";
 import { merch } from "./js/data/merch.js";
 import { wishlist } from "./js/data/wishlist.js";
-import { genCards } from "./js/modules/genCards.js";
+import { createCardsAndAppendToList } from "./js/modules/genCards.js";
 import "./js/modules/addRandomItem.js";
 import "./js/modules/filterCategories.js";
 
@@ -15,7 +15,7 @@ export const wishlistList = selectEl(".wishlist-list");
 
 // TODO 3: voglio che le card list vengano generate al load della pagina
 window.onload = () => {
-	genCards(games, gamesList);
-	genCards(merch, merchList);
-	genCards(wishlist, wishlistList);
+	createCardsAndAppendToList(games, gamesList);
+	createCardsAndAppendToList(merch, merchList);
+	createCardsAndAppendToList(wishlist, wishlistList);
 };

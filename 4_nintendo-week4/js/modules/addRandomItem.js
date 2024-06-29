@@ -2,9 +2,6 @@ import { selectEl, wishlistList } from "../../script.js";
 import { genSingleCard } from "./genCards.js";
 import { wishlist, newWishlistItems } from "../data/wishlist.js";
 
-const btnAddRandomToWishlist = selectEl(".btn-add");
-btnAddRandomToWishlist.onclick = () => checkRandomToWishlist();
-
 export let randomToWishlist;
 
 const checkRandomToWishlist = () => {
@@ -16,6 +13,9 @@ const checkRandomToWishlist = () => {
 		genSingleCard(wishlistList, randomToWishlist);
 	}
 };
+
+const btnAddRandomToWishlist = selectEl(".btn-add");
+btnAddRandomToWishlist.onclick = () => checkRandomToWishlist();
 
 const handleModal = () => {
 	const modal = selectEl(".modal");
