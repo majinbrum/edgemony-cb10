@@ -9,8 +9,7 @@
 			"dislikes": 25
 		},
 		"views": 305,
-		"author": "Alexander",
-		"userId": 121
+		"userId": 1
 	},
 	{
 		"id": 2,
@@ -22,8 +21,7 @@
 			"dislikes": 32
 		},
 		"views": 4884,
-		"author": "Sophia",
-		"userId": 91
+		"userId": 2
 	},
 	{
 		"id": 3,
@@ -35,8 +33,7 @@
 			"dislikes": 39
 		},
 		"views": 4152,
-		"author": "Benjamin",
-		"userId": 16
+		"userId": 3
 	},
 	{
 		"id": 4,
@@ -48,8 +45,7 @@
 			"dislikes": 18
 		},
 		"views": 4548,
-		"author": "Isabella",
-		"userId": 47
+		"userId": 4
 	},
 	{
 		"id": 5,
@@ -61,8 +57,7 @@
 			"dislikes": 30
 		},
 		"views": 626,
-		"author": "Daniel",
-		"userId": 131
+		"userId": 5
 	},
 	{
 		"id": 6,
@@ -74,8 +69,7 @@
 			"dislikes": 8
 		},
 		"views": 38,
-		"author": "Olivia",
-		"userId": 98
+		"userId": 6
 	},
 	{
 		"id": 7,
@@ -87,8 +81,7 @@
 			"dislikes": 26
 		},
 		"views": 168,
-		"author": "Ethan",
-		"userId": 70
+		"userId": 7
 	},
 	{
 		"id": 8,
@@ -100,8 +93,7 @@
 			"dislikes": 36
 		},
 		"views": 2116,
-		"author": "Ava",
-		"userId": 67
+		"userId": 8
 	},
 	{
 		"id": 9,
@@ -113,8 +105,7 @@
 			"dislikes": 18
 		},
 		"views": 2235,
-		"author": "Henry",
-		"userId": 82
+		"userId": 9
 	},
 	{
 		"id": 10,
@@ -126,7 +117,6 @@
 			"dislikes": 3
 		},
 		"views": 4504,
-		"author": "Mia",
-		"userId": 144
+		"userId": 10
 	}
 ]

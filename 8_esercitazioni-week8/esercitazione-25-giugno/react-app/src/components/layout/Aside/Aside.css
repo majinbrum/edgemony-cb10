@@ -1,19 +1,35 @@
-aside {
-	background-color: var(--rightBg);
-	height: 100%;
-	max-height: 100dvh;
-	margin: 2rem;
+@keyframes gradient-border {
+	0% {
+		background-position: 0 0, 100% 50%; /* Starting positions */
+	}
+	50% {
+		background-position: 100% 50%, 0 0; /* Midway positions */
+	}
+	100% {
+		background-position: 0 0, 100% 50%; /* Ending positions */
+	}
 }
 
-aside img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+aside {
+	border-radius: 1rem;
+	margin: 1rem;
+
+	padding: 2rem;
+	border: solid 0.2rem transparent;
+	border-radius: 1rem;
+	background: linear-gradient(to bottom, #86efac, #3b82f6, #9333ea) padding-box, linear-gradient(to bottom, #86efac, #3b82f6, #9333ea) border-box;
+	background-size: 200% 200%; /* Set background size to allow movement */
+	box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+	animation: gradient-border 5s ease infinite;
 }
 
 @media (min-width: 768px) {
 	div#root aside {
 		grid-column: span 1;
+	}
+
+	aside {
+		margin: 2rem;
 	}
 }
 

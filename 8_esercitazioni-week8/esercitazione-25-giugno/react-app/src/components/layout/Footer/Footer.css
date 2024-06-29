@@ -42,6 +42,7 @@ footer .footer-top .footer-description {
 footer .footer-top .logo {
 	width: 60px;
 	height: 60px;
+	border: 0.2rem solid var(--darkAccent);
 	border-radius: 50%;
 	overflow: hidden;
 }
