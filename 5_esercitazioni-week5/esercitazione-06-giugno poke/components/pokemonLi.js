@@ -34,40 +34,32 @@ const createPokedexLi = (pokemonNumber, pokemonName) => {
 	}
 	pokemonNumberEl.append(pokemonNumberSpanEl);
 
-	const pokeBall = createEl("img");
-	addClass(pokeBall, "pokeball");
-	pokeBall.src = "./img/pokeball.png";
-	pokeBall.alt = "Pokéball image";
-	pokeBall.width = "20";
-	pokeBall.height = "20";
-	pokeBall.loading = "lazy";
-
 	const pokemonNameEl = createEl("h2");
 	addClass(pokemonNameEl, "pokemon-name");
 	pokemonNameEl.setAttribute("data-name", pokemonName);
 	pokemonNameEl.textContent = pokemonName;
 
-	pokedexLi.append(listArrow, pokeBall, pokemonNumberEl, pokemonNameEl);
+	pokedexLi.append(listArrow, pokemonNumberEl, pokemonNameEl);
 };
 
-const appendPokemonIcon = (pokemonName, pokemonIcon) => {
-	const singlePokedexLi = document.querySelector(`.pokemon-name[data-name="${pokemonName}"]`);
+// const appendPokemonIcon = (pokemonName, pokemonIcon) => {
+// 	const singlePokedexLi = document.querySelector(`.pokemon-name[data-name="${pokemonName}"]`);
 
-	const pokemonIconDiv = createEl("div");
-	addClass(pokemonIconDiv, "pokemon-icon");
+// 	const pokemonIconDiv = createEl("div");
+// 	addClass(pokemonIconDiv, "pokemon-icon");
 
-	const pokemonIconEl = createEl("img");
-	addClass(pokemonIconEl, "pokemon-icon-img");
-	pokemonIconEl.src = pokemonIcon;
-	pokemonIconEl.alt = `${pokemonName} icon`;
-	pokemonIconEl.width = "30";
-	pokemonIconEl.height = "30";
-	pokemonIconEl.loading = "lazy";
+// 	const pokemonIconEl = createEl("img");
+// 	addClass(pokemonIconEl, "pokemon-icon-img");
+// 	pokemonIconEl.src = pokemonIcon;
+// 	pokemonIconEl.alt = `${pokemonName} icon`;
+// 	pokemonIconEl.width = "30";
+// 	pokemonIconEl.height = "30";
+// 	pokemonIconEl.loading = "lazy";
 
-	pokemonIconDiv.append(pokemonIconEl);
+// 	pokemonIconDiv.append(pokemonIconEl);
 
-	singlePokedexLi.insertAdjacentElement("beforebegin", pokemonIconDiv);
-};
+// 	singlePokedexLi.insertAdjacentElement("beforebegin", pokemonIconDiv);
+// };
 
 const appendPokemonTypes = (pokemonName, pokemonTypes) => {
 	const singlePokedexLi = document.querySelector(`.pokemon-name[data-name="${pokemonName}"]`).parentElement;
@@ -87,7 +79,8 @@ const appendPokemonTypes = (pokemonName, pokemonTypes) => {
 	singlePokedexLi.append(pokemonTypesDiv);
 };
 
-export { createPokedexLi, appendPokemonIcon, appendPokemonTypes };
+// export { createPokedexLi, appendPokemonIcon, appendPokemonTypes };
+export { createPokedexLi, appendPokemonTypes };
 
 /*
 <div class='pokedex-li'>

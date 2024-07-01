@@ -112,6 +112,72 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	position: relative;
+}
+
+.gba-container button {
+	position: absolute;
+	background-color: transparent;
+}
+
+.gba-container button.left-arrow-btn,
+.gba-container button.top-arrow-btn,
+.gba-container button.right-arrow-btn,
+.gba-container button.bottom-arrow-btn {
+	width: 55px;
+	height: 55px;
+	border: none;
+}
+
+.gba-container button.a-btn,
+.gba-container button.b-btn {
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	border: 5px solid black;
+}
+
+.gba-container button:hover {
+	box-shadow: inset -8px -7px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.gba-container button.left-arrow-btn {
+	left: 94px;
+	top: 296px;
+}
+
+.gba-container button.top-arrow-btn {
+	left: 152px;
+	top: 245px;
+}
+
+.gba-container button.left-arrow-btn:hover {
+	box-shadow: inset 8px -7px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.gba-container button.top-arrow-btn:hover {
+	box-shadow: inset -8px 7px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.gba-container button.right-arrow-btn {
+	left: 206px;
+	top: 301px;
+}
+
+.gba-container button.bottom-arrow-btn {
+	left: 152px;
+	top: 356px;
+}
+
+.gba-container button.a-btn {
+	right: 68px;
+	top: 261px;
+}
+
+.gba-container button.b-btn {
+	right: 187px;
+	top: 303px;
 }
 
 .gba-screen {
@@ -195,8 +261,8 @@ body {
 
 .pokemon-types {
 	display: flex;
-	flex-direction: column;
-	row-gap: calc(var(--1u) / 2);
+	/* flex-direction: column; */
+	column-gap: calc(var(--1u) / 2);
 }
 
 .pokemon-type {
@@ -253,10 +319,6 @@ body {
 
 .pokemon-type.water {
 	background-color: var(--water);
-}
-
-.pokemon-type.grass {
-	background-color: var(--grass);
 }
 
 .pokemon-type.electric {

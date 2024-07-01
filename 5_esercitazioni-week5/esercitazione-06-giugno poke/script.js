@@ -1,4 +1,5 @@
-import { createPokedexLi, appendPokemonTypes, appendPokemonIcon } from "./components/pokemonLi.js";
+// import { createPokedexLi, appendPokemonTypes, appendPokemonIcon } from "./components/pokemonLi.js";
+import { createPokedexLi, appendPokemonTypes } from "./components/pokemonLi.js";
 
 fetch("https://pokeapi.co/api/v2/pokedex/1/")
 	.then((res) => res.json())
@@ -13,8 +14,8 @@ fetch("https://pokeapi.co/api/v2/pokedex/1/")
 			fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}/`)
 				.then((res) => res.json())
 				.then((pokemon) => {
-					const pokemonIcon = pokemon.sprites.front_default;
-					appendPokemonIcon(pokemonName, pokemonIcon);
+					// const pokemonIcon = pokemon.sprites.front_default;
+					// appendPokemonIcon(pokemonName, pokemonIcon);
 					const pokemonTypes = pokemon.types;
 					appendPokemonTypes(pokemonName, pokemonTypes);
 				});
