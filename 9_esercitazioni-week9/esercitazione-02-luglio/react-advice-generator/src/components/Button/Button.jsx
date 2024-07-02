@@ -5,7 +5,6 @@ function Button(props) {
 	const { setAdvice } = props;
 	const randomizeAdvice = () => {
 		const randomIndex = Math.floor(Math.random() * 10);
-		console.log(randomIndex);
 		setAdvice(advices[randomIndex]);
 	};
 

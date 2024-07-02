@@ -1,15 +1,15 @@
 import { Button } from "../Button/Button.jsx";
-import "./Card.css";
+import style from "./Card.module.css";
 
 function Card(props) {
 	const { id, advice, setAdvice } = props;
 	return (
 		<>
-			<div className='card'>
+			<div className={style.card}>
 				<h2>ADVICE #{id}</h2>
 				<p>"{advice}"</p>
 
-				<img className='pattern-divider' src='./public/images/pattern-divider-mobile.svg' alt='Pattern divider' />
+				<img className={style.patternDivider} src='./public/images/pattern-divider-mobile.svg' alt='Pattern divider' />
 
 				<Button setAdvice={setAdvice} />
 			</div>

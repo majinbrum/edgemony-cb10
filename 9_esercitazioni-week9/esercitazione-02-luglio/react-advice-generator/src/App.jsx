@@ -1,15 +1,13 @@
 import { useState } from "react";
 import { Card } from "./components/Card/Card.jsx";
 import advices from "./assets/data.json";
-import "./style.css";
-// import styles from "./style.module.css";
+import style from "./style.module.css";
 
 function App() {
 	const [advice, setAdvice] = useState(advices[0]);
 	return (
 		<>
-			{/* <div className={styles.container}> */}
-			<div className='container'>
+			<div className={style.container}>
 				<Card id={advice.id} advice={advice.advice} setAdvice={setAdvice} />
 			</div>
 		</>
