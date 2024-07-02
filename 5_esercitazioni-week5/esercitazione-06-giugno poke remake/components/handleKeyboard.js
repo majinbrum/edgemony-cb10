@@ -1,5 +1,9 @@
 import { renderSearchPage } from "./renderSearchPage.js";
+import { renderMyPokedex, addToMyPokedex } from "./renderMyPokedex.js";
+import { handlePokeball } from "./createPokedexLi.js";
+import { renderMainPage } from "../script.js";
 const pokedexMainDiv = document.querySelector(".pokedex-main");
+const title = document.querySelector("h1");
 
 let count = -1;
 export const handleKeyboardMain = (e) => {
@@ -49,17 +53,39 @@ export const handleKeyboardMain = (e) => {
 			break;
 
 		case "b":
-			renderSearchPage();
-			count = -1;
-			document.removeEventListener("keydown", handleKeyboardMain);
+			if (title.textContent === "POKéDEX") {
+				renderSearchPage();
+				count = -1;
+				document.removeEventListener("keydown", handleKeyboardMain);
+			} else {
+				// renderPokemonDetails
+				count = -1;
+				document.removeEventListener("keydown", handleKeyboardMain);
+			}
+
 			break;
 
 		case "a":
 			pokedexListElements[count].firstChild.classList.add("select");
-			console.log(pokedexListElements[count].dataset.name);
+
+			const currentPokemonName = pokedexListElements[count].dataset.name;
+			addToMyPokedex(currentPokemonName);
+
+			const pokeBall = pokedexListElements[count].childNodes[2];
+			handlePokeball(pokeBall);
+			break;
+
+		case "ArrowLeft":
+		case "ArrowRight":
+			if (title.textContent === "POKéDEX") {
+				renderMyPokedex();
+			} else {
+				renderMainPage();
+			}
 			break;
 
 		default:
+			console.log(e.key);
 			break;
 	}
 };

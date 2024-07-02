@@ -1,7 +1,7 @@
-import { createEl } from "./utilities.js";
-import { GETtypes } from "../GET.js";
-import { renderFooterButtons } from "./renderFooterButtons.js";
+import { GETtypes } from "./GET.js";
 import { renderMainPage } from "../script.js";
+import { createEl } from "./utilities.js";
+import { renderFooterButtons } from "./renderFooterButtons.js";
 
 const footerButtons = [
 	{ src: "./img/arrows-btn.png", alt: "Arrows button", title: "Scegli" },
@@ -28,15 +28,18 @@ export const renderSearchPage = async () => {
 	createEl("option", { value: "", textContent: "Tutti" }, selectTypeInput1);
 	createEl("option", { value: "", textContent: "Tutti" }, selectTypeInput2);
 	const allTypes = await GETtypes();
-	console.log(allTypes);
 	allTypes.map((type) => createEl("option", { value: type, textContent: type }, selectTypeInput1));
 	allTypes.map((type) => createEl("option", { value: type, textContent: type }, selectTypeInput2));
 
 	const searchBtn = createEl("button", { className: "search-btn", textContent: "Vai" }, searchDiv);
 	searchBtn.addEventListener("click", () => {
-		const pokemonName = searchNameInput.value;
-		const pokemonType1 = selectTypeInput1.value;
-		const pokemonType2 = selectTypeInput2.value;
-		renderMainPage(pokemonName, pokemonType1, pokemonType2);
+		renderFilteredPokedex(searchNameInput, selectTypeInput1, selectTypeInput2);
 	});
+};
+
+export const renderFilteredPokedex = (searchNameInput, selectTypeInput1, selectTypeInput2) => {
+	const pokemonName = searchNameInput.value;
+	const pokemonType1 = selectTypeInput1.value;
+	const pokemonType2 = selectTypeInput2.value;
+	renderMainPage(pokemonName, pokemonType1, pokemonType2);
 };

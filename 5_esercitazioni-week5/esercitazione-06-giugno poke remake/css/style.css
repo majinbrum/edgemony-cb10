@@ -216,7 +216,7 @@ body {
 	filter: grayscale(100%);
 }
 
-.pokeball:hover {
+.pokeball.added {
 	filter: unset;
 }
 
@@ -347,6 +347,7 @@ body {
 
 .search-div .search-btn {
 	background-color: var(--normal);
+	border: 2px solid var(--normal);
 	cursor: pointer;
 }
 
@@ -360,4 +361,10 @@ body {
 
 .search-div .search-name-input {
 	width: 280px;
+}
+
+.search-div .search-name-input.focus,
+.search-div .search-type-input.focus,
+.search-div .search-btn.focus {
+	border: 5px solid blue;
 }

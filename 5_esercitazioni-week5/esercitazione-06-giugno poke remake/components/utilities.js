@@ -12,6 +12,6 @@ export const createEl = (element, attrs = {}, parent = document.body) => {
 	return el;
 };
 
-// esempio:
+// esempio di utilizzo:
 // const asideEl = document.querySelector("aside");
 // createElement("div", { className: "prova-class", innerHTML: "ciao mondo" }, asideEl);
