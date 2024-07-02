@@ -1,0 +1,37 @@
+.card {
+	background-color: var(--darkGrayishBlue);
+	width: 100%;
+	border-radius: 1rem;
+	margin: 1rem;
+	padding: 2rem;
+	text-align: center;
+
+	display: flex;
+	flex-direction: column;
+	row-gap: 2rem;
+
+	position: relative;
+}
+
+.card h2 {
+	font-size: 0.8rem;
+	letter-spacing: 0.3rem;
+	color: var(--neonGreen);
+}
+
+.card p {
+	font-size: 1.6rem;
+	font-weight: 800;
+	color: var(--lightCyan);
+}
+
+.card .pattern-divider {
+	margin-bottom: 2rem;
+}
+
+@media (min-width: 390px) {
+	.card {
+		width: 100%;
+		max-width: 390px;
+	}
+}
