@@ -17,7 +17,7 @@ function App() {
 		<>
 			<main>
 				<div className={style.container}>
-					<Form setUserInfo={setUserInfo} setTemplateVisibility={setTemplateVisibility} />
+					<Form setUserInfo={setUserInfo} templateVisibility={templateVisibility} setTemplateVisibility={setTemplateVisibility} />
 					{templateVisibility && <Template userInfo={userInfo} setUserInfo={setUserInfo} />}
 				</div>
 

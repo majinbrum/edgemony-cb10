@@ -1,7 +1,7 @@
 import formStyle from "./Form.module.css";
 
 function Form(props) {
-	const { setUserInfo, setTemplateVisibility } = props;
+	const { setUserInfo, templateVisibility, setTemplateVisibility } = props;
 
 	const handleChange = (e) => {
 		const id = e.target.id;
@@ -45,7 +45,7 @@ function Form(props) {
 				<textarea className={formStyle.infoInput} rows='4' cols='50' id='message' onChange={(e) => handleChange(e)} />
 			</div>
 
-			<button className={formStyle.generateBtn} type='submit' onClick={(e) => generateTemplate(e)}>
+			<button disabled={templateVisibility === true} className={formStyle.generateBtn} type='submit' onClick={(e) => generateTemplate(e)}>
 				Generate template
 			</button>
 		</form>

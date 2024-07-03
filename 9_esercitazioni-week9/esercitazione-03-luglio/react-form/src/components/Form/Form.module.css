@@ -38,6 +38,11 @@
 	font-size: 18px;
 }
 
+.infoInput:focus,
+.infoInput:focus-visible {
+	outline: 2px solid var(--primaryMedium);
+}
+
 .generateBtn {
 	border: none;
 	border-radius: 0.5rem;
@@ -49,4 +54,9 @@
 	font-size: 16px;
 
 	cursor: pointer;
+}
+
+.generateBtn[disabled] {
+	background-color: var(--neutralDark);
+	opacity: 0.5;
 }

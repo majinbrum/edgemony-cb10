@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import templateStyleCSS from "./Template.module.css";
 
 function Template(props) {
@@ -133,6 +133,7 @@ function Template(props) {
 				setTemplateStyle(template);
 			}
 		});
+
 		const siblingsBtn = Array.from(e.target.parentElement.children);
 		siblingsBtn.forEach((btn) => {
 			if (btn.id === e.target.id) {
@@ -146,7 +147,7 @@ function Template(props) {
 	return (
 		<div className={templateStyleCSS.templateContainer}>
 			<div className={templateStyleCSS.templateBtnsContainer}>
-				<button className={templateStyleCSS.templateBtn} id='formal' onClick={(e) => changeTemplateStyle(e)}>
+				<button className={`${templateStyleCSS.templateBtn} ${templateStyleCSS.active}`} id='formal' onClick={(e) => changeTemplateStyle(e)}>
 					Formal
 				</button>
 				<button className={templateStyleCSS.templateBtn} id='friendly' onClick={(e) => changeTemplateStyle(e)}>
