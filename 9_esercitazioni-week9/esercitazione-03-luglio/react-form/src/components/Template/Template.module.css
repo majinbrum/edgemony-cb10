@@ -1,0 +1,57 @@
+.templateContainer {
+	background-color: var(--neutralLight);
+	/* width: 100%; */
+	max-width: 400px;
+	height: min-content;
+	padding: 2rem;
+	border-radius: 1rem;
+
+	display: flex;
+	flex-direction: column;
+	row-gap: 2rem;
+}
+
+.templateBtnsContainer {
+	display: flex;
+	column-gap: 1rem;
+}
+
+.templateBtn {
+	width: 100%;
+
+	border: none;
+	border-radius: 0.5rem;
+	background-color: var(--primaryLight);
+	padding: 1rem 0;
+
+	color: var(--neutralDark);
+	font-family: "Karla Bold";
+	font-size: 16px;
+
+	cursor: pointer;
+}
+
+.templateBtn:active {
+	background-color: var(--primaryMedium);
+	color: var(--neutralLight);
+}
+
+.templateEmail {
+	display: flex;
+	flex-direction: column;
+	row-gap: 1rem;
+
+	word-wrap: break-word;
+}
+
+.textareaMessage::before {
+	content: "“";
+	font-size: 28px;
+	font-family: "Karla Bold";
+}
+
+.textareaMessage::after {
+	content: "”";
+	font-size: 28px;
+	font-family: "Karla Bold";
+}
