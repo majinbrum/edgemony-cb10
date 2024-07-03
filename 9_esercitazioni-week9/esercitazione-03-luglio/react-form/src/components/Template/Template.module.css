@@ -31,7 +31,8 @@
 	cursor: pointer;
 }
 
-.templateBtn:active {
+.templateBtn:active,
+.templateBtn.active {
 	background-color: var(--primaryMedium);
 	color: var(--neutralLight);
 }
