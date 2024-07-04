@@ -1,16 +1,19 @@
 import { useState } from "react";
 import { Result } from "./components/Result/Result.jsx";
 import { Form } from "./components/Form/Form.jsx";
+
 import style from "./style.module.css";
 
 function App() {
-	const [result, setResult] = useState({ monthly: "", total: "" });
+	const [result, setResult] = useState();
+	const [dataInput, setDataInput] = useState({ amount: "", term: "", rate: "", type: "" });
+	console.log(dataInput);
 
 	return (
 		<>
 			<main>
 				<div className={style.container}>
-					<Form result={result} setResult={setResult} />
+					<Form dataInput={dataInput} setDataInput={setDataInput} result={result} setResult={setResult} />
 
 					<Result result={result} />
 				</div>

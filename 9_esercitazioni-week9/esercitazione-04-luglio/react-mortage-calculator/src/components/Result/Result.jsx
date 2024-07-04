@@ -1,12 +1,12 @@
 import styles from "./Result.module.css";
-import Illustration from "../../../public/images/illustration-empty.svg";
+import Illustration from "/images/illustration-empty.svg";
 
 function Result(props) {
 	const { result } = props;
 
 	return (
 		<div className={styles.resultContainer}>
-			{result.monthly ? (
+			{result ? (
 				<>
 					<h2>Your results</h2>
 					<p>Your results are shown below based on the information you provided. To adjust the results, edit the form and click "calculate repayments" again.</p>
@@ -14,11 +14,14 @@ function Result(props) {
 					<div className={styles.resultBox}>
 						<div className={styles.monthlyResult}>
 							<p>Your monthly repayments</p>
-							<h3>{result.monthly}</h3>
+							<h3>£{result.monthly}</h3>
 						</div>
+
+						<hr />
+
 						<div className={styles.totalResult}>
 							<p>Total you'll repay over the term</p>
-							<h4>{result.total}</h4>
+							<h4>£{result.total}</h4>
 						</div>
 					</div>
 				</>

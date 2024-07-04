@@ -11,17 +11,18 @@
 	--neutralSlate500: hsl(200, 26%, 54%);
 	--neutralSlate700: hsl(200, 24%, 40%);
 	--neutralSlate900: hsl(202, 55%, 16%);
+	--neutralSlateDark: hsl(202, 56%, 12%);
 }
 
 @font-face {
 	font-family: "Plus Jakarta Sans Medium";
-	src: url("../public/font/PlusJakartaSans-Medium.ttf") format("truetype");
+	src: url("/font/PlusJakartaSans-Medium.ttf") format("truetype");
 	font-weight: normal;
 }
 
 @font-face {
 	font-family: "Plus Jakarta Sans Bold";
-	src: url("../public/font/PlusJakartaSans-Bold.ttf") format("truetype");
+	src: url("/font/PlusJakartaSans-Bold.ttf") format("truetype");
 	font-weight: bold;
 }
 

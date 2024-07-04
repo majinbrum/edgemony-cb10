@@ -7,11 +7,7 @@
 
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 	row-gap: 2rem;
-
-	text-align: center;
 }
 
 .resultContainer h2 {
@@ -20,4 +16,50 @@
 
 .resultContainer p {
 	color: var(--neutralSlate500);
+}
+
+.resultContainer:not(.resultBox) {
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.resultContainer:has(.resultBox) {
+	justify-content: start;
+	align-items: start;
+	text-align: start;
+}
+
+.resultContainer:has(.resultBox) .resultBox {
+	background-color: var(--neutralSlateDark);
+	width: 100%;
+	border-radius: 0.5rem;
+	padding: 2rem;
+	border-top: 3px solid var(--primaryLight);
+
+	display: flex;
+	flex-direction: column;
+	row-gap: 2rem;
+}
+
+.resultContainer:has(.resultBox) .resultBox .monthlyResult,
+.resultContainer:has(.resultBox) .resultBox .totalResult {
+	display: flex;
+	flex-direction: column;
+	row-gap: 1rem;
+}
+
+.resultContainer:has(.resultBox) .resultBox h3 {
+	color: var(--primaryLight);
+	font-size: 3rem;
+}
+
+.resultContainer:has(.resultBox) .resultBox hr {
+	background-color: var(--neutralLight);
+	opacity: 0.2;
+}
+
+.resultContainer:has(.resultBox) .resultBox h4 {
+	color: var(--neutralLight);
+	font-size: 1.5rem;
 }

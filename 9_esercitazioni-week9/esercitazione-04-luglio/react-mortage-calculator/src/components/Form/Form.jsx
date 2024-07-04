@@ -1,15 +1,21 @@
 import { InfoBox } from "./InfoBox.jsx";
 import { TypeBox } from "./TypeBox.jsx";
 import { calculateRepayments } from "./calculateRepayments.js";
-import { calculateInterest } from "./calculateInterest.js";
+import { calculateInterests } from "./calculateInterests.js";
 import styles from "./Form.module.css";
-import CalcIcon from "../../../public/images/icon-calculator.svg";
+import CalcIcon from "/images/icon-calculator.svg";
 
 function Form(props) {
-	const { result, setResult } = props;
+	const { dataInput, setDataInput, result, setResult } = props;
 
 	function calculateResult(e) {
 		e.preventDefault();
+
+		const mortageTypeSelected = dataInput.mortageType;
+
+		setResult(mortageTypeSelected === "repayment"
+			? calculateRepayments(dataInput.amount, dataInput.term, dataInput.rate)
+			: calculateInterests(dataInput.amount, dataInput.term, dataInput.rate));
 	}
 
 	return (
@@ -19,20 +25,20 @@ function Form(props) {
 				<button>Clear All</button>
 			</header>
 
-			<InfoBox name='amount' label='Mortage Amount' symbol='£' type='number' />
+			<InfoBox name='amount' label='Mortage Amount' symbol='£' type='number' setDataInput={setDataInput} />
 
 			<div className={styles.optionsBox}>
-				<InfoBox name='term' label='Mortage Term' symbol='years' type='number' />
+				<InfoBox name='term' label='Mortage Term' symbol='years' type='number' setDataInput={setDataInput} />
 
-				<InfoBox name='interest' label='Interest Rate' symbol='%' type='number' />
+				<InfoBox name='rate' label='Interest Rate' symbol='%' type='number' setDataInput={setDataInput} />
 			</div>
 
 			<div className={styles.mortageTypeBox}>
 				<legend htmlFor='mortageType'>Mortage Type</legend>
 
-				<TypeBox id='repayment' label='Repayment' />
+				<TypeBox id='repayment' label='Repayment' setDataInput={setDataInput} />
 
-				<TypeBox id='interestOnly' label='Interest Only' />
+				<TypeBox id='interest' label='Interest Only' setDataInput={setDataInput} />
 			</div>
 
 			<button className={styles.calculateBtn} type='submit' onClick={(e) => calculateResult(e)}>
