@@ -2,11 +2,15 @@ import advices from "../../assets/data.json";
 import "./Button.css";
 
 function Button(props) {
-	const { setAdvice } = props;
-	const randomizeAdvice = () => {
+	const { advice, setAdvice } = props;
+	function randomizeAdvice() {
 		const randomIndex = Math.floor(Math.random() * 10);
-		setAdvice(advices[randomIndex]);
-	};
+		if (advice !== advices[randomIndex]) {
+			setAdvice(advices[randomIndex]);
+		} else {
+			randomizeAdvice();
+		}
+	}
 
 	return (
 		<>

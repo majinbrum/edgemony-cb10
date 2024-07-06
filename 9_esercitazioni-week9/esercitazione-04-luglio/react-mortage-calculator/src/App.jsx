@@ -13,7 +13,7 @@ function App() {
 		<>
 			<main>
 				<div className={style.container}>
-					<Form dataInput={dataInput} setDataInput={setDataInput} result={result} setResult={setResult} />
+					<Form dataInput={dataInput} setDataInput={setDataInput} setResult={setResult} />
 
 					<Result result={result} />
 				</div>

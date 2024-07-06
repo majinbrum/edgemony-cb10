@@ -6,12 +6,12 @@ function Card(props) {
 	return (
 		<>
 			<div className={style.card}>
-				<h2>ADVICE #{id}</h2>
-				<p>"{advice}"</p>
+				<h1>ADVICE #{advice.id}</h1>
+				<p>"{advice.advice}"</p>
 
 				<img className={style.patternDivider} src='./public/images/pattern-divider-mobile.svg' alt='Pattern divider' />
 
-				<Button setAdvice={setAdvice} />
+				<Button advice={advice} setAdvice={setAdvice} />
 			</div>
 		</>
 	);

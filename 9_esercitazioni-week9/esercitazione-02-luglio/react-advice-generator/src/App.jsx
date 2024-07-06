@@ -8,7 +8,7 @@ function App() {
 	return (
 		<>
 			<div className={style.container}>
-				<Card id={advice.id} advice={advice.advice} setAdvice={setAdvice} />
+				<Card advice={advice} setAdvice={setAdvice} />
 			</div>
 		</>
 	);

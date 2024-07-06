@@ -6,16 +6,21 @@ import styles from "./Form.module.css";
 import CalcIcon from "/images/icon-calculator.svg";
 
 function Form(props) {
-	const { dataInput, setDataInput, result, setResult } = props;
+	const { dataInput, setDataInput, setResult } = props;
 
+	/**
+	 * Calcola i risultati
+	 * @param {number} amount
+	 * @param {number} term
+	 * @param {number} rate
+	 * @returns monthly: value, total: value
+	 */
 	function calculateResult(e) {
 		e.preventDefault();
 
 		const mortageTypeSelected = dataInput.mortageType;
 
-		setResult(mortageTypeSelected === "repayment"
-			? calculateRepayments(dataInput.amount, dataInput.term, dataInput.rate)
-			: calculateInterests(dataInput.amount, dataInput.term, dataInput.rate));
+		setResult(mortageTypeSelected === "repayment" ? calculateRepayments(dataInput.amount, dataInput.term, dataInput.rate) : calculateInterests(dataInput.amount, dataInput.term, dataInput.rate));
 	}
 
 	return (
