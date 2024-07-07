@@ -7,6 +7,7 @@
 }
 
 main {
+	margin-top: 2rem;
 	width: 100vw;
 	display: flex;
 	justify-content: center;
@@ -32,6 +33,7 @@ main {
 	/* row-gap: 1rem; */
 
 	text-align: center;
+	overflow: hidden;
 }
 
 .clock-div {
@@ -68,8 +70,9 @@ h3 {
 .modale-container {
 	display: none;
 	margin: 0 1rem 1rem;
-	padding: 1rem;
+	/* padding: 1rem; */
 	border-radius: 1rem;
+	overflow: hidden;
 	background-color: #d2d2d2;
 
 	flex-direction: column;
@@ -77,6 +80,7 @@ h3 {
 
 .modale-div {
 	color: #1d1d1d;
+	margin: 1rem;
 
 	/* display: flex; */
 	align-items: center;
@@ -111,7 +115,9 @@ h3 {
 	justify-content: center;
 	align-items: center;
 	column-gap: 1rem;
-	margin-top: 1rem;
+	margin: 0 1rem 1rem;
+
+	transition: background 1.5s cubic-bezier(0, 0, 0, 1.12) forwards;
 }
 
 .modale-buttons button {
@@ -122,4 +128,51 @@ h3 {
 	border-radius: 1rem;
 
 	cursor: pointer;
+}
+
+.modale-container.answered {
+	animation: answerAnimation 1.5s cubic-bezier(0, 0, 0, 1.12) forwards;
+	/* animation-delay: 0.2s; */
+}
+
+.modale-buttons.answer {
+	background: rgb(5, 87, 5);
+	margin: 0;
+	padding: 1rem;
+}
+
+.modale-buttons.answer input {
+	background: transparent;
+	color: white;
+	border: none;
+	padding: 0.5rem;
+}
+
+.modale-buttons.answer input:focus-visible {
+	outline: transparent;
+}
+
+.modale-buttons.answer button {
+	background: transparent;
+	color: white;
+	border: none;
+	font-weight: bold;
+	text-align: end;
+}
+
+.modale-container.read {
+	animation: readAnimation 1.5s cubic-bezier(0, 0, 0, 1.12) forwards;
+	/* animation-delay: 0.2s; */
+}
+
+@keyframes answerAnimation {
+	to {
+		transform: translateX(150%);
+	}
+}
+
+@keyframes readAnimation {
+	to {
+		transform: translateX(-150%);
+	}
 }

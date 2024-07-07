@@ -9,31 +9,33 @@ const timeEl = document.querySelector(".time");
 const dateEl = document.querySelector(".date");
 
 const runClock = () => {
-	setInterval(() => {
-		const date = new Date();
+	const date = new Date();
 
-		const formattedTime = new Intl.DateTimeFormat("it-IT", {
-			hour: "2-digit",
-			minute: "2-digit",
-			// second: "2-digit",
-		}).format(date);
-		timeEl.textContent = formattedTime;
+	const formattedTime = new Intl.DateTimeFormat("it-IT", {
+		hour: "2-digit",
+		minute: "2-digit",
+		// second: "2-digit",
+	}).format(date);
+	timeEl.textContent = formattedTime;
 
-		const formattedDate = new Intl.DateTimeFormat("it-IT", {
-			weekday: "short",
-			day: "numeric",
-			month: "long",
-		})
-			.format(date)
-			.split(" ")
-			.map((el) => `${el[0].toUpperCase()}${el.slice(1)}`)
-			.join(" ");
-		dateEl.textContent = formattedDate;
+	const formattedDate = new Intl.DateTimeFormat("it-IT", {
+		weekday: "short",
+		day: "numeric",
+		month: "long",
+	})
+		.format(date)
+		.split(" ")
+		.map((el) => `${el[0].toUpperCase()}${el.slice(1)}`)
+		.join(" ");
+	dateEl.textContent = formattedDate;
 
-		// console.log(date);
-	}, 1000);
+	// console.log(date);
 };
 runClock();
+
+setInterval(() => {
+	runClock();
+}, 1000);
 
 //** MODALE **//
 
@@ -42,6 +44,8 @@ const notificationDiv = document.querySelector(".notification-div");
 
 const modaleContainer = document.querySelector(".modale-container");
 const modaleDiv = document.querySelector(".modale-div");
+const modaleContentName = document.querySelector(".modale-content h3 ");
+const modaleContentText = document.querySelector(".modale-content p ");
 const notificationArrow = document.querySelector(".notification-arrow");
 
 const modaleButtonsDiv = document.querySelector(".modale-buttons");
@@ -58,20 +62,34 @@ notificationDiv.addEventListener("click", (event) => {
 
 		case notificationArrow:
 			modaleButtonsDiv.style.display = "flex";
+			modaleContentName.textContent = "Giacomo";
+			modaleContentText.textContent = "buondì!";
 			break;
 
 		case chiudiBtn:
-			modaleContainer.style.display = "none";
-			console.log("Messaggio segnato come letto!");
+			// modaleContainer.style.display = "none";
+			modaleContainer.classList.add("read");
+			setTimeout(function () {
+				modaleContainer.remove();
+			}, 1700);
 			break;
 
 		case rispondiBtn:
-			console.log("Domani sistemo tutto e aggiusto il funzionamento e i controlli!");
-			modaleContainer.style.display = "none";
-			break;
+			if (event.target.nextElementSibling === chiudiBtn) {
+				// modaleContainer.style.display = "none";
 
-		default:
-			console.error("Stai cliccando nel punto sbagliato!");
+				const answerInput = document.createElement("input");
+				answerInput.type = "text";
+				chiudiBtn.remove();
+				modaleButtonsDiv.insertAdjacentElement("afterbegin", answerInput);
+				modaleButtonsDiv.classList.add("answer");
+			} else {
+				modaleContainer.classList.add("answered");
+				setTimeout(function () {
+					modaleContainer.remove();
+				}, 1700);
+			}
+
 			break;
 	}
 });
