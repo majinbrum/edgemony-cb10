@@ -1,13 +1,11 @@
 .container {
-	padding: 16px;
-	width: 300px;
-	border: 1px solid coral;
+	background-color: var(--darkest);
+	width: 100vw;
+	height: 100dvh;
+
 	display: flex;
 	flex-direction: column;
-	row-gap: 8px;
-}
-
-.container__list {
-	border: 1px solid lightblue;
-	margin-top: 8px;
+	justify-content: center;
+	align-items: center;
+	row-gap: 2rem;
 }
