@@ -1,0 +1,27 @@
+.container__list__todo {
+	font-size: 0.8rem;
+	color: var(--light);
+	font-weight: var(--fontRegular);
+	background-color: var(--medium);
+
+	padding: 0.8rem 1rem;
+	margin-right: 0.5rem;
+	border-radius: 0.5rem;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.container__list__todo__delete {
+	width: 1.5rem;
+	height: 1.5rem;
+	font-size: 0.6rem;
+	font-weight: var(--fontBold);
+
+	border-radius: 50%;
+	background-color: var(--dark);
+	color: var(--accent);
+
+	cursor: pointer;
+}

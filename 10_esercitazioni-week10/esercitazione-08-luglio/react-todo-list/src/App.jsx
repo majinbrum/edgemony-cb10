@@ -1,14 +1,19 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import { Form } from "./components/Form/Form.jsx";
+import { TodoList } from "./components/TodoList/TodoList.jsx";
+import styles from "./App.module.css";
 
 function App() {
-	const [count, setCount] = useState(0);
+	const [todos, setTodos] = useState([]);
+	const [newTodo, setNewTodo] = useState({ title: "" });
 
 	return (
 		<>
-			<p>Click on the Vite and React logos to learn more</p>
+			<div className={styles.container}>
+				<TodoList todos={todos} setTodos={setTodos} />
+
+				<Form todos={todos} setTodos={setTodos} newTodo={newTodo} setNewTodo={setNewTodo} />
+			</div>
 		</>
 	);
 }

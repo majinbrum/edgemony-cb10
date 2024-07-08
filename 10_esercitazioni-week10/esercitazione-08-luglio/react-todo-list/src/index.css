@@ -1,6 +1,26 @@
+:root {
+	/* PRIMARY */
+	--accent: hsl(75, 94%, 57%);
+
+	/* NEUTRAL */
+	--light: hsl(0, 0%, 100%);
+	--medium: hsl(0, 0%, 20%);
+	--dark: hsl(0, 0%, 12%);
+	--darkest: hsl(0, 0%, 8%);
+
+	/* FONT WEIGHTS */
+	--fontLight: 400;
+	--fontRegular: 600;
+	--fontBold: 700;
+}
+
 * {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-	font-family: sans-serif;
+
+	font-family: "Inter", sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+	font-variation-settings: "slnt" 0;
 }
