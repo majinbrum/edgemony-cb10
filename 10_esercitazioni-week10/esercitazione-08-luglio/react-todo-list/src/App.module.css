@@ -1,0 +1,13 @@
+.container {
+	padding: 16px;
+	width: 300px;
+	border: 1px solid coral;
+	display: flex;
+	flex-direction: column;
+	row-gap: 8px;
+}
+
+.container__list {
+	border: 1px solid lightblue;
+	margin-top: 8px;
+}
