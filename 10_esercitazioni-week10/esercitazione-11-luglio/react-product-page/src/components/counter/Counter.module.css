@@ -1,0 +1,15 @@
+.counter {
+	background-color: var(--light);
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.counter button {
+	all: unset;
+
+	cursor: pointer;
+	border-radius: 0.2rem;
+	padding: 1rem 2rem;
+}

@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./App.module.css";
 
 import { Navbar } from "./components/Navbar/Navbar.jsx";
+import Counter from "./components/counter/Counter.jsx";
 import Button from "./components/button/Button.jsx";
 import IconCart from "./components/icons/IconCart.jsx";
 
@@ -16,6 +17,7 @@ function App() {
 				<Button text={"Add to cart"}>
 					<IconCart fill={"var(--black)"} />
 				</Button>
+				<Counter />
 			</div>
 		</>
 	);
