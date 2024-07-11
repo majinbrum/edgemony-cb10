@@ -1,0 +1,15 @@
+header {
+	display: flex;
+	flex-direction: column;
+	row-gap: 1rem;
+}
+
+header h1 {
+	color: var(--textCtaBackground);
+	font-weight: 800;
+}
+
+header h3 {
+	color: var(--text);
+	font-weight: 600;
+}

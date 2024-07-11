@@ -1,0 +1,49 @@
+.container {
+	width: 100%;
+	height: 100dvh;
+	margin: 0 auto;
+	padding: 2rem 0;
+
+	display: flex;
+	flex-direction: column;
+	row-gap: 2rem;
+
+	overflow: hidden;
+	position: relative;
+
+	text-align: center;
+}
+
+.bg {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+
+	background-color: var(--mainBackground);
+}
+
+.bgCircles {
+	width: 146px;
+	height: 145px;
+
+	position: absolute;
+	top: calc(145px / 2 - 1rem);
+	left: calc(146px - 2rem);
+	z-index: 0;
+}
+
+/* FRONTEND MENTOR */
+.attribution {
+	font-size: 11px;
+	text-align: center;
+
+	margin-top: auto;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}

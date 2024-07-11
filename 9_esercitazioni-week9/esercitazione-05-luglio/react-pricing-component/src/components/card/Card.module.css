@@ -1,0 +1,196 @@
+.cardContainer {
+	margin: 0 auto;
+	border-radius: 0.5rem;
+	background-color: var(--componentBackground);
+}
+
+.cardTop,
+.cardBottom {
+	display: flex;
+	flex-direction: column;
+	row-gap: 2rem;
+
+	padding: 2rem;
+}
+
+.cardTop h2 {
+	font-size: 16px;
+	font-weight: 800;
+	letter-spacing: 0.2rem;
+	color: var(--text);
+}
+
+.slideContainer {
+	width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slideContainer .slider {
+	-webkit-appearance: none; /* Override default CSS styles */
+	appearance: none;
+
+	width: 100%;
+	height: 12px;
+	border-radius: 2rem;
+	background: var(--emptySliderBar);
+	outline: none;
+
+	opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+	-webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+	transition: opacity 0.2s;
+}
+
+/* Mouse-over effects */
+.slideContainer .slider:hover {
+	opacity: 1; /* Fully shown on mouse-over */
+}
+
+.slideContainer .slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 40px;
+	height: 40px;
+	border: 0;
+	background-image: url("../../../public/images/icon-slider.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: var(--sliderBackground);
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.slideContainer .slider::-moz-range-thumb {
+	width: 40px;
+	height: 40px;
+	border: 0;
+	background-image: url("../../../public/images/icon-slider.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: var(--sliderBackground);
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.cardTop .priceTag {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	column-gap: 1rem;
+}
+
+.cardTop .priceTag span:first-child {
+	font-size: 42px;
+	font-weight: 800;
+	color: var(--textCtaBackground);
+}
+
+.cardTop .priceTag span:last-child {
+	font-size: 18px;
+	font-weight: 600;
+	color: var(--text);
+}
+
+.cardTop .options {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	column-gap: 0.5rem;
+}
+
+.cardTop .options label {
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--text);
+}
+
+.cardContainer hr {
+	border: 1px solid var(--mainBackground);
+}
+
+.cardBottom ul {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	row-gap: 1rem;
+
+	color: var(--text);
+}
+
+.cardBottom li img {
+	margin-right: 1rem;
+}
+
+.cardBottom .btnCta {
+	background-color: var(--textCtaBackground);
+	color: var(--ctaText);
+	font-weight: 800;
+	font-size: 18px;
+
+	padding: 1rem 2rem;
+	border-radius: 2rem;
+
+	cursor: pointer;
+}
+
+/* The switch - the box around the slider */
+.options .switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 30px;
+}
+
+/* Hide default HTML checkbox */
+.options .switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+/* The slider */
+.options .slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: var(--toggleBackground);
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+.options .slider:before {
+	position: absolute;
+	content: "";
+	height: 20px;
+	width: 20px;
+	left: 8px;
+	bottom: 5px;
+	background-color: var(--componentBackground);
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+.options input:checked + .slider {
+	background-color: var(--sliderBackground);
+}
+
+.options input:focus + .slider {
+	box-shadow: 0 0 1px var(--sliderBackground);
+}
+
+.options input:checked + .slider:before {
+	-webkit-transform: translateX(25px);
+	-ms-transform: translateX(25px);
+	transform: translateX(25px);
+}
+
+/* Rounded sliders */
+.options .slider.round {
+	border-radius: 30px;
+}
+
+.options .slider.round:before {
+	border-radius: 50%;
+}
