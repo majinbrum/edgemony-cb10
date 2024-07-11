@@ -1,0 +1,35 @@
+.thumbNail {
+	border-radius: 0.5rem;
+	width: 80px;
+	height: 80px;
+
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.thumbNail:has(.selected) {
+	border: 2px solid var(--accent);
+}
+
+.thumbNail img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.thumbNail img.selected {
+	filter: blur(1.5px);
+}
+
+/* .selected {
+	border: 2px solid var(--accent);
+}  
+.over {
+	width: 100%;
+	height: 100%;
+
+	background-color: var(--white);
+	position: absolute;
+	top: 0;
+	left: 0;
+} */

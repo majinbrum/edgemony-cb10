@@ -1,0 +1,14 @@
+.product-lightbox {
+	width: 350px;
+
+	display: flex;
+	flex-direction: column;
+	row-gap: 1rem;
+}
+
+.thumbnail-list {
+	list-style: none;
+
+	display: flex;
+	justify-content: space-between;
+}

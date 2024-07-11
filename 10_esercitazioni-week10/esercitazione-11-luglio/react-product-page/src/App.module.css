@@ -1,0 +1,23 @@
+.container {
+	width: 100%;
+	max-width: 900px;
+	/* max-width: 1440px; */
+
+	margin: 0 auto;
+}
+
+main {
+	padding: 4rem 2rem;
+
+	display: flex;
+	column-gap: 4rem;
+}
+
+/* FRONTEND MENTOR */
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}

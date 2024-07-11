@@ -1,7 +1,6 @@
 import IconPlus from "../icons/IconPlus.jsx";
 import IconMinus from "../icons/IconMinus.jsx";
 import styles from "./Counter.module.css";
-import classNames from "classnames";
 
 function Counter() {
 	return (
@@ -10,7 +9,7 @@ function Counter() {
 				<button>
 					<IconMinus />
 				</button>
-				<div>0</div>
+				<span>0</span>
 				<button>
 					<IconPlus />
 				</button>

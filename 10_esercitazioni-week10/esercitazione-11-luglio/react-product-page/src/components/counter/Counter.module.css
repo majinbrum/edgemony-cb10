@@ -1,5 +1,9 @@
 .counter {
+	width: calc(40% - 0.5rem);
+
 	background-color: var(--light);
+	border-radius: 0.5rem;
+	padding: 1rem 2rem;
 
 	display: flex;
 	justify-content: space-between;
@@ -8,8 +12,12 @@
 
 .counter button {
 	all: unset;
-
 	cursor: pointer;
-	border-radius: 0.2rem;
-	padding: 1rem 2rem;
+
+	display: flex;
+	align-items: center;
+}
+
+.counter span {
+	font-weight: 700;
 }

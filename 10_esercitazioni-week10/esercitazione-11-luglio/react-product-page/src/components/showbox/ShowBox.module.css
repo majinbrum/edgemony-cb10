@@ -1,0 +1,11 @@
+.showBox {
+	width: 350px;
+	height: 350px;
+
+	border-radius: 0.5rem;
+	overflow: hidden;
+}
+
+.showBox img {
+	width: 100%;
+}

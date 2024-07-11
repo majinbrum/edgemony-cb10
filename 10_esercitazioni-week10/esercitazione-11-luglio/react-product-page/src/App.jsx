@@ -1,23 +1,26 @@
 import { useState } from "react";
 import styles from "./App.module.css";
 
-import { Navbar } from "./components/Navbar/Navbar.jsx";
-import Counter from "./components/counter/Counter.jsx";
-import Button from "./components/button/Button.jsx";
-import IconCart from "./components/icons/IconCart.jsx";
+import Navbar from "./components/navbar/Navbar.jsx";
+import ProductLightBox from "./components/product-lightbox/ProductLightBox.jsx";
+import ProductDescription from "./components/product-description/ProductDescription.jsx";
 
 function App() {
-	// const [count, setCount] = useState(0);
-
 	return (
 		<>
-			<div className='container'>
+			<div className={styles.container}>
 				<Navbar />
-				<h1>Hello world</h1>
-				<Button text={"Add to cart"}>
-					<IconCart fill={"var(--black)"} />
-				</Button>
-				<Counter />
+				<main>
+					<ProductLightBox />
+					<ProductDescription />
+				</main>
+			</div>
+			<div className={styles.attribution}>
+				Challenge by{" "}
+				<a href='https://www.frontendmentor.io?ref=challenge' target='_blank'>
+					Frontend Mentor
+				</a>
+				. Coded by <a href='#'>Bruna Alamia</a>.
 			</div>
 		</>
 	);

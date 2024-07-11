@@ -1,0 +1,58 @@
+.productDescription {
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	row-gap: 1rem;
+}
+
+.productDescription h2 {
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.1rem;
+
+	color: var(--dark);
+}
+
+.productDescription h1 {
+	font-weight: 700;
+}
+
+.productDescription p {
+	font-size: 12px;
+
+	color: var(--dark);
+}
+
+.priceTag {
+	font-size: 21px;
+	font-weight: 700;
+
+	display: flex;
+	align-items: baseline;
+	column-gap: 1rem;
+}
+
+.discountTag {
+	font-size: 12px;
+	font-weight: 700;
+
+	color: var(--white);
+	background-color: var(--darkest);
+	padding: 0.2rem 0.5rem;
+	border-radius: 0.5rem;
+}
+
+.originalPrice {
+	font-size: 12px;
+	font-weight: 700;
+
+	color: var(--dark);
+	text-decoration: line-through;
+}
+
+.btnDiv {
+	display: flex;
+	column-gap: 1rem;
+}
