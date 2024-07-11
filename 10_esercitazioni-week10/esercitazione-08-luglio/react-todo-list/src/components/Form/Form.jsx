@@ -17,9 +17,9 @@ function Form(props) {
 	};
 
 	return (
-		<form className={styles.container__form}>
+		<form className={styles.container__form} onClick={addTodo}>
 			<input className={styles.container__form__input} type='text' placeholder='ToDo' value={newTodo.title} onChange={updateTitle} />
-			<input className={styles.container__form__add} type='submit' value='Add' onClick={addTodo} />
+			<input className={styles.container__form__add} type='submit' value='Add' />
 		</form>
 	);
 }
