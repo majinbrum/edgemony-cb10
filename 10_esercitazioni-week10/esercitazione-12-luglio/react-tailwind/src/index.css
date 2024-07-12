@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* FRONTEND MENTOR */
+.attribution {
+	font-size: 11px;
+	text-align: center;
+	color: #859dbd;
+}
+.attribution a {
+	color: #f0f9ff;
+}
