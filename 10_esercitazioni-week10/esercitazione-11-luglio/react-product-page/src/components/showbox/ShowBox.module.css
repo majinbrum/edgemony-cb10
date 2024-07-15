@@ -1,11 +1,16 @@
 .showBox {
-	width: 350px;
-	height: 350px;
-
-	border-radius: 0.5rem;
-	overflow: hidden;
+	width: 100%;
+	height: auto;
 }
 
 .showBox img {
 	width: 100%;
+	border-radius: 0.5rem;
+}
+
+@media (min-width: 768px) {
+	.showBox {
+		width: 350px;
+		height: 350px;
+	}
 }
