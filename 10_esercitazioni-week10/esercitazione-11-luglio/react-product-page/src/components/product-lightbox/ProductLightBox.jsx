@@ -6,23 +6,23 @@ import styles from "./ProductLightBox.module.css";
 const products = [
 	{
 		id: self.crypto.randomUUID(),
-		product: "./public/images/image-product-1.jpg",
-		thumbNail: "./public/images/image-product-1-thumbnail.jpg",
+		product: "/images/image-product-1.jpg",
+		thumbNail: "/images/image-product-1-thumbnail.jpg",
 	},
 	{
 		id: self.crypto.randomUUID(),
-		product: "./public/images/image-product-2.jpg",
-		thumbNail: "./public/images/image-product-2-thumbnail.jpg",
+		product: "/images/image-product-2.jpg",
+		thumbNail: "/images/image-product-2-thumbnail.jpg",
 	},
 	{
 		id: self.crypto.randomUUID(),
-		product: "./public/images/image-product-3.jpg",
-		thumbNail: "./public/images/image-product-3-thumbnail.jpg",
+		product: "/images/image-product-3.jpg",
+		thumbNail: "/images/image-product-3-thumbnail.jpg",
 	},
 	{
 		id: self.crypto.randomUUID(),
-		product: "./public/images/image-product-4.jpg",
-		thumbNail: "./public/images/image-product-4-thumbnail.jpg",
+		product: "/images/image-product-4.jpg",
+		thumbNail: "/images/image-product-4-thumbnail.jpg",
 	},
 ];
 function ProductLightBox() {

@@ -8,7 +8,7 @@
 }
 
 .productDescription h2 {
-	font-size: 12px;
+	font-size: 16px;
 	font-weight: 700;
 	letter-spacing: 0.1rem;
 
@@ -16,36 +16,42 @@
 }
 
 .productDescription h1 {
+	font-size: 36px;
 	font-weight: 700;
+	line-height: 1;
 }
 
 .productDescription p {
-	font-size: 12px;
+	font-size: 16px;
 
 	color: var(--dark);
 }
 
 .priceTag {
-	font-size: 21px;
-	font-weight: 700;
-
 	display: flex;
+	justify-content: space-between;
 	align-items: baseline;
-	column-gap: 1rem;
 }
 
-.discountTag {
-	font-size: 12px;
+.priceTag .discountedPrice {
+	font-size: 28px;
+	font-weight: 700;
+}
+
+.priceTag .discountTag {
+	font-size: 18px;
 	font-weight: 700;
 
 	color: var(--white);
 	background-color: var(--darkest);
 	padding: 0.2rem 0.5rem;
 	border-radius: 0.5rem;
+
+	margin-left: 1rem;
 }
 
-.originalPrice {
-	font-size: 12px;
+.priceTag .originalPrice {
+	font-size: 18px;
 	font-weight: 700;
 
 	color: var(--dark);
@@ -54,5 +60,19 @@
 
 .btnDiv {
 	display: flex;
-	column-gap: 1rem;
+	flex-direction: column;
+	gap: 1rem 0;
+}
+
+@media (min-width: 768px) {
+	.priceTag {
+		flex-direction: column;
+		justify-content: start;
+		gap: 1rem 0;
+	}
+
+	.btnDiv {
+		flex-direction: row;
+		gap: 0 1rem;
+	}
 }

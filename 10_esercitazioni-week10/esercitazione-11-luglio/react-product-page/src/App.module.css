@@ -1,23 +1,38 @@
 .container {
-	width: 100%;
-	max-width: 900px;
-	/* max-width: 1440px; */
-
-	margin: 0 auto;
+	margin: 0 1rem 1rem;
 }
 
 main {
-	padding: 4rem 2rem;
-
 	display: flex;
-	column-gap: 4rem;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem 0;
 }
 
 /* FRONTEND MENTOR */
 .attribution {
 	font-size: 11px;
 	text-align: center;
+	margin-bottom: 1rem;
 }
 .attribution a {
 	color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 768px) {
+	.container {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+	main {
+		padding: 4rem 2rem;
+
+		flex-direction: row;
+		gap: 0 4rem;
+	}
+
+	.attribution {
+		margin-bottom: 0;
+	}
 }

@@ -30,14 +30,11 @@ const navListItems = [
 ];
 
 function Navbar() {
-	const [isDesktop, setIsDesktop] = useState(true);
+	const [isDesktop, setIsDesktop] = useState(false);
 	return (
 		<>
 			<nav>
 				<div>
-					{isDesktop ? null : <img src='../public/images/icon-menu.svg' alt='Menu icon' width='13' height='12' />}
-					<img src='../public/images/logo.svg' alt='Menu icon' width='133' height='15' />
-
 					{isDesktop ? (
 						<ul>
 							{navListItems.map((listItem) => {
@@ -48,11 +45,14 @@ function Navbar() {
 								);
 							})}
 						</ul>
-					) : null}
+					) : (
+						<img src='/images/icon-menu.svg' alt='Menu icon' width='13' height='12' />
+					)}
+					<img src='/images/logo.svg' alt='Menu icon' width='133' height='15' />
 				</div>
 				<div>
-					<img src='../public/images/icon-cart.svg' alt='Menu icon' width='18' height='16' />
-					<img src='../public/images/image-avatar.png' alt='Menu icon' width='30' height='30' />
+					<img src='/images/icon-cart.svg' alt='Menu icon' width='18' height='16' />
+					<img src='/images/image-avatar.png' alt='Menu icon' width='30' height='30' />
 				</div>
 			</nav>
 		</>
