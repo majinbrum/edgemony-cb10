@@ -1,0 +1,18 @@
+button {
+	width: 60px;
+	height: 60px;
+	background-color: var(--neonGreen);
+	border: none;
+	border-radius: 50%;
+
+	position: absolute;
+	bottom: -30px;
+	left: calc(50% - 30px);
+
+	cursor: pointer;
+	transition: box-shadow 0.2s;
+}
+
+button:hover {
+	box-shadow: var(--neonGreen) 0px 0px 24px;
+}
