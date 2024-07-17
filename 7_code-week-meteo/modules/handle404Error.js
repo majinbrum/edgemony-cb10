@@ -14,7 +14,7 @@ export function handle404Error(city) {
 
 	const cityNotFoundText = createEl("p");
 	cityNotFoundText.style.color = "#fff";
-	cityNotFoundText.textContent = `No results for ${city}`;
+	cityNotFoundText.textContent = `Nessun risultato per ${city}`;
 
 	const cityNotFoundClose = createEl("button");
 	cityNotFoundClose.textContent = "X";
