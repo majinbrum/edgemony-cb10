@@ -1,5 +1,10 @@
 .container {
-	margin: 0 1rem 1rem;
+	margin: 0 1rem 2rem;
+}
+
+mark {
+	background-color: var(--accent);
+	color: var(--light);
 }
 
 main {
@@ -7,6 +12,74 @@ main {
 	flex-direction: column;
 	align-items: center;
 	gap: 2rem 0;
+}
+
+main.home header {
+	display: flex;
+	flex-direction: column;
+	row-gap: 1rem;
+	padding: 2rem 1rem;
+}
+
+main.home hr {
+	width: 100%;
+	border-top: 1px solid var(--accent);
+}
+
+main.home > div {
+	width: 100%;
+}
+
+main.home > div h2 {
+	font-weight: 700;
+}
+
+main.home .catalog {
+	margin-top: 2rem;
+
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	gap: 2rem;
+
+	list-style: none;
+}
+
+main.home .catalog-product {
+	/* background-color: var(--light); */
+	border: 1px solid var(--light);
+	padding: 2rem;
+	border-radius: 1rem;
+
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	gap: 1rem 0;
+}
+
+main.home .catalog-product .productThumbnail {
+	text-align: center;
+}
+
+main.home .catalog-product .tags {
+	display: flex;
+	gap: 0.5rem;
+}
+
+main.home .catalog-product .tags h5 {
+	padding: 0.2rem 1rem;
+	background-color: var(--accent);
+	border-radius: 1rem;
+	color: var(--light);
+}
+
+main.home .catalog-product .add {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+main.home .catalog-product .add a {
+	color: var(--accent);
 }
 
 @media (min-width: 768px) {
@@ -17,13 +90,19 @@ main {
 
 	main {
 		padding: 4rem 2rem;
-
-		flex-direction: row;
-		gap: 0 4rem;
 	}
 
-	.attribution {
-		margin-bottom: 0;
+	main.home header {
+		padding: 0 1rem;
+	}
+
+	main.home .catalog {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	main.product {
+		flex-direction: row;
+		gap: 0 4rem;
 	}
 }
 
@@ -166,14 +245,17 @@ nav div img {
 	row-gap: 1rem;
 }
 
+.productBrand,
 .productDescription h2 {
 	font-size: 16px;
 	font-weight: 700;
 	letter-spacing: 0.1rem;
+	text-transform: uppercase;
 
 	color: var(--dark);
 }
 
+.productTitle,
 .productDescription h1 {
 	font-size: 36px;
 	font-weight: 700;
@@ -186,17 +268,20 @@ nav div img {
 	color: var(--dark);
 }
 
+main.home .catalog-product .price,
 .priceTag {
 	display: flex;
 	justify-content: space-between;
 	align-items: baseline;
 }
 
+main.home .catalog-product .discountedPrice,
 .priceTag .discountedPrice {
 	font-size: 28px;
 	font-weight: 700;
 }
 
+main.home .catalog-product .discountTag,
 .priceTag .discountTag {
 	font-size: 18px;
 	font-weight: 700;
@@ -272,10 +357,13 @@ nav div img {
 
 /** FRONTEND MENTOR **/
 .attribution {
+	background-color: var(--accent);
+	color: var(--light);
+	padding: 1rem;
+
 	font-size: 11px;
 	text-align: center;
-	margin-bottom: 1rem;
 }
 .attribution a {
-	color: hsl(228, 45%, 44%);
+	color: var(--white);
 }

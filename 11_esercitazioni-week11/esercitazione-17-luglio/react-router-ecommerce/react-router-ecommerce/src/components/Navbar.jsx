@@ -8,13 +8,13 @@ const navListItems = [
 	},
 	// {
 	// 	id: self.crypto.randomUUID(),
-	// 	label: "Men",
-	// 	path: "#",
+	// 	label: "Women",
+	// 	path: "womens-shoes",
 	// },
 	// {
 	// 	id: self.crypto.randomUUID(),
-	// 	label: "Women",
-	// 	path: "#",
+	// 	label: "Men",
+	// 	path: "mens-shoes",
 	// },
 	{
 		id: self.crypto.randomUUID(),

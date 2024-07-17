@@ -7,9 +7,7 @@ function Default() {
 		<>
 			<div className={styles.container}>
 				<Navbar />
-				<main>
-					<Outlet />
-				</main>
+				<Outlet />
 			</div>
 			<div className={styles.attribution}>
 				Challenge by{" "}
