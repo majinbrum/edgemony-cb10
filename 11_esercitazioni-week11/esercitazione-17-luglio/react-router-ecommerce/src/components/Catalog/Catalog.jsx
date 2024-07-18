@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styles from "../App.module.css";
+import styles from "./Catalog.module.css";
 
 function Catalog({ list }) {
 	const [selectedProduct, setSelectedProduct] = useState(null);

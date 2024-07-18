@@ -1,4 +1,4 @@
-import styles from "../App.module.css";
+import styles from "./Button.module.css";
 
 function Button({ children, text = "Add to cart", onClick }) {
 	return (

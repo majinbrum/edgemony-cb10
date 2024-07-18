@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Catalog from "./components/Catalog.jsx";
+import Catalog from "./components/Catalog/Catalog.jsx";
 import styles from "./App.module.css";
 
 function App() {
@@ -52,14 +52,14 @@ function App() {
 
 				<hr />
 
-				<div>
+				<div className={styles.catalogContainer}>
 					<h2>Men's Shoes ({shoesM.length})</h2>
 					<Catalog list={shoesM} />
 				</div>
 
 				<hr />
 
-				<div>
+				<div className={styles.catalogContainer}>
 					<h2>Women's Shoes ({shoesF.length})</h2>
 					<Catalog list={shoesF} />
 				</div>

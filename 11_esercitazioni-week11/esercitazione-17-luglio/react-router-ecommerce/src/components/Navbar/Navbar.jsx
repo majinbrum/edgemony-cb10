@@ -1,4 +1,4 @@
-import styles from "../App.module.css";
+import styles from "./Navbar.module.css";
 
 // const navListItems = [
 // 	{
