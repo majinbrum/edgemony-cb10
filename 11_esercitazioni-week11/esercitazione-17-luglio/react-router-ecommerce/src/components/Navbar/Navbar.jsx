@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 import styles from "./Navbar.module.css";
 
 // const navListItems = [
@@ -32,15 +34,15 @@ function Navbar() {
 			<nav>
 				<div>
 					{/* <img src='/images/icon-menu.svg' alt='Menu icon' width='13' height='12' /> */}
-					<a href='/'>
+					<NavLink to='/'>
 						<img src='/images/logo.svg' alt='Menu icon' width='133' height='15' />
-					</a>
+					</NavLink>
 				</div>
 				<div>
-					<a className={styles.cartIcon} href='cart'>
+					<NavLink to='cart' className={styles.cartIcon}>
 						<img src='/images/icon-cart.svg' alt='Menu icon' width='18' height='16' />
 						{cartAmount > 0 && <span className={styles.cartAmount}>{cartAmount}</span>}
-					</a>
+					</NavLink>
 					<img src='/images/image-avatar.png' alt='Menu icon' width='30' height='30' />
 				</div>
 			</nav>

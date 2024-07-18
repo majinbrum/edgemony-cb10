@@ -1,8 +1,8 @@
 import styles from "./Button.module.css";
 
-function Button({ children, text = "Add to cart", onClick }) {
+function Button({ children, text, onClick, id, disabled }) {
 	return (
-		<button className={styles.button} onClick={onClick}>
+		<button id={id} className={styles.button} onClick={onClick} disabled={disabled}>
 			{children}
 			{text}
 		</button>

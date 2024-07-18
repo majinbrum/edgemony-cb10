@@ -1,17 +1,8 @@
-import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
 import styles from "./Catalog.module.css";
 
 function Catalog({ list }) {
-	const [selectedProduct, setSelectedProduct] = useState(null);
-
-	const saveSelectedProduct = () => {
-		localStorage.setItem("selectedProduct", JSON.stringify(selectedProduct));
-	};
-
-	useEffect(() => {
-		saveSelectedProduct(selectedProduct);
-	}, [selectedProduct]);
-
 	return (
 		<ul className={styles.catalog}>
 			{list.map((item) => (
@@ -32,9 +23,10 @@ function Catalog({ list }) {
 								<h4 className={styles.discountedPrice}>{item.price}$</h4>
 								<h4 className={styles.discountTag}>{item.discountPercentage}%</h4>
 							</div>
-							<a href={`product`} onClick={() => setSelectedProduct(item)}>
+							{/* <a href={`product`} onClick={() => setSelectedProduct(item)}>
 								Details
-							</a>
+							</a> */}
+							<Link to={`product/${item.id}`}>Details</Link>
 						</div>
 					</div>
 				</li>
