@@ -20,9 +20,3 @@ main.home {
 .catalogContainer h2 {
 	font-weight: 700;
 }
-
-@media (min-width: 768px) {
-	.home header {
-		padding: 1rem 1rem 0;
-	}
-}

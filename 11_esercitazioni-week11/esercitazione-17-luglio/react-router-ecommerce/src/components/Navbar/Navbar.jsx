@@ -19,6 +19,7 @@ import styles from "./Navbar.module.css";
 // 		path: "mens-shoes",
 // 	},
 // ];
+
 import { useState, useEffect } from "react";
 
 function Navbar() {
