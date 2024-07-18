@@ -1,8 +1,8 @@
 import styles from "../App.module.css";
 
-function Button({ children, text = "Add to cart" }) {
+function Button({ children, text = "Add to cart", onClick }) {
 	return (
-		<button className={styles.button}>
+		<button className={styles.button} onClick={onClick}>
 			{children}
 			{text}
 		</button>

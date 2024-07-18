@@ -10,8 +10,11 @@ function ProductPage() {
 	const [currentProduct, setCurrentProduct] = useState(null);
 	const [selectedImg, setSelectedImg] = useState("");
 	const [originalPrice, setOriginalPrice] = useState(0);
-	const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || []);
-	const [productIndexInCart, setProductIndexInCart] = useState(undefined);
+
+	const handleClick = (img) => {
+		const productImages = currentProduct.images.find((otherImg) => img === otherImg);
+		setSelectedImg(img);
+	};
 
 	const [counter, setCounter] = useState(0);
 	const handleCounter = (e) => {
@@ -27,14 +30,20 @@ function ProductPage() {
 	}
 
 	const addToCart = () => {
-		console.log(currentProduct, counter);
-		if (counter !== 0) {
-			if (productIndexInCart >= 0) {
-				setCart(cart.map((item, index) => (index === productIndexInCart ? { ...item, quantity: counter } : item)));
-			} else {
-				setCart((prevCart) => [...prevCart, { item: currentProduct, quantity: counter }]);
-			}
+		const cart = JSON.parse(localStorage.getItem("cart")) || [];
+		const existingItem = cart.findIndex((item) => item.id === currentProduct.id);
+
+		if (existingItem >= 0) {
+			console.log(existingItem);
+			cart[existingItem].quantity += counter;
+			console.log("lo contiene: aggiorna");
+		} else {
+			cart.push({ item: currentProduct, quantity: { counter } });
+			console.log("non lo contiene: aggiunto");
 		}
+
+		localStorage.setItem("cart", JSON.stringify(cart));
+		console.log("non esiste cart, lo creo");
 	};
 
 	useEffect(() => {
@@ -42,35 +51,12 @@ function ProductPage() {
 	}, []);
 
 	useEffect(() => {
-		localStorage.setItem("cart", JSON.stringify(cart));
-		console.log(cart);
-	}, [cart]);
-
-	useEffect(() => {
+		console.log(currentProduct);
 		if (currentProduct) {
 			setSelectedImg(currentProduct.images[0]);
 			calculateOriginalPrice(currentProduct);
-			console.log(currentProduct);
-
-			if (cart.length > 0) {
-				const isAddedInCart = (product) => product.item.id === currentProduct.id;
-				const index = cart.findIndex(isAddedInCart);
-				if (index >= 0) {
-					setProductIndexInCart(index);
-				}
-			}
 		}
 	}, [currentProduct]);
-
-	useEffect(() => {
-		if (currentProduct) {
-			if (productIndexInCart >= 0) {
-				setCounter(cart[productIndexInCart].quantity);
-			} else {
-				setCounter(0);
-			}
-		}
-	}, [productIndexInCart, cart, currentProduct]);
 
 	return (
 		<>
@@ -83,7 +69,7 @@ function ProductPage() {
 						<ul className={styles["thumbnail-list"]}>
 							{currentProduct.images.map((img, index) => {
 								return (
-									<li key={index} onClick={() => setSelectedImg(img)}>
+									<li key={index} onClick={() => handleClick(img)}>
 										<div className={styles.thumbNail}>
 											<img className={img === selectedImg ? styles.selected : undefined} src={img} alt='Product image thumbnail' loading='lazy' />
 										</div>

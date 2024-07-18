@@ -2,6 +2,24 @@
 	margin: 0 1rem 2rem;
 }
 
+nav .cartIcon {
+	position: relative;
+}
+
+nav .cartAmount {
+	position: absolute;
+	top: -12px;
+	right: -12px;
+
+	background-color: var(--accent);
+	color: var(--light);
+	font-weight: 700;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	text-align: center;
+}
+
 mark {
 	background-color: var(--accent);
 	color: var(--light);
@@ -163,10 +181,6 @@ nav a {
 	font-size: 12px;
 
 	cursor: pointer;
-}
-
-nav div img {
-	width: 100%;
 }
 
 /** PRODUCT PAGE **/
