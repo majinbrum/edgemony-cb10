@@ -6,6 +6,11 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./ProductPage.module.css";
 
+import { useContext } from "react";
+import { CartContext, SetCartContext } from "../../providers/CartContext.jsx";
+
+import { addToCart } from "../../components/addToCart.js";
+
 function calculateOriginalPrice(product) {
 	const discountedPrice = product.price;
 	const discountPercentage = product.discountPercentage;
@@ -22,7 +27,10 @@ function ProductPage() {
 	const [selectedImg, setSelectedImg] = useState("");
 
 	const [counter, setCounter] = useState(0);
-	const [cart, setCart] = useState(null);
+
+	// global state
+	const { setCart } = useContext(SetCartContext);
+	const { cart } = useContext(CartContext);
 
 	useEffect(() => {
 		setIsLoading(true);
@@ -39,27 +47,7 @@ function ProductPage() {
 				setHasError(true);
 			})
 			.finally(() => setIsLoading(false));
-
-		setCart(JSON.parse(localStorage.getItem("cart")) || []);
 	}, []);
-
-	function addToCart() {
-		if (counter !== 0) {
-			const isInArray = cart.some((item) => item.item.id === product.id);
-			if (isInArray) {
-				const newCart = cart.map((item) => (item.item.id === product.id ? { ...item, quantity: item.quantity + counter } : item));
-				setCart(newCart);
-
-				// console.log("si", cart);
-			} else {
-				setCart((prevCart) => [...prevCart, { item: product, quantity: counter }]);
-
-				// console.log("no", cart);
-			}
-			localStorage.setItem("cart", JSON.stringify(cart));
-			console.log(cart);
-		}
-	}
 
 	if (isLoading) return <p>isLoading...</p>;
 	if (hasError) return <p>C'è un prob</p>;
@@ -95,7 +83,7 @@ function ProductPage() {
 					</div>
 					<div className={styles.btnDiv}>
 						<Counter counter={counter} setCounter={setCounter} />
-						<Button text={"Add to cart"} onClick={addToCart}>
+						<Button text={"Add to cart"} onClick={() => addToCart(counter, product, cart, setCart)}>
 							<IconCart fill={"var(--black)"} />
 						</Button>
 					</div>

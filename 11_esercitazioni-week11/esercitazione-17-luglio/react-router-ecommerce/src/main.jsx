@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // COMPONENTS
+import CartProvider from "./providers/CartContext.jsx";
+
 import Default from "./components/Default/Default.jsx";
 import App from "./App.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
@@ -37,6 +39,8 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
 		{/* <App /> */}
-		<RouterProvider router={router} />
+		<CartProvider>
+			<RouterProvider router={router} />
+		</CartProvider>
 	</React.StrictMode>
 );

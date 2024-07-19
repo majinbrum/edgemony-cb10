@@ -2,7 +2,16 @@ import { useState, useEffect } from "react";
 import Catalog from "./components/Catalog/Catalog.jsx";
 import styles from "./App.module.css";
 
+function calculateOriginalPrice(product) {
+	const discountedPrice = product.price;
+	const discountPercentage = product.discountPercentage;
+	const originalPrice = discountedPrice / (1 - discountPercentage / 100);
+	return originalPrice.toFixed(2);
+}
+
 function App() {
+	const [isLoading, setIsLoading] = useState(true);
+
 	const [shoesM, setShoesM] = useState([]);
 	const [shoesF, setShoesF] = useState([]);
 
@@ -11,6 +20,10 @@ function App() {
 			fetch("https://dummyjson.com/products/category/mens-shoes")
 				.then((res) => res.json())
 				.then((res) => {
+					console.log(res);
+					res.products.forEach((item) => {
+						item.originalPrice = Number(calculateOriginalPrice(item));
+					});
 					setShoesM(res.products);
 				});
 		} catch (error) {
@@ -23,6 +36,9 @@ function App() {
 			fetch("https://dummyjson.com/products/category/womens-shoes")
 				.then((res) => res.json())
 				.then((res) => {
+					res.products.forEach((item) => {
+						item.originalPrice = Number(calculateOriginalPrice(item));
+					});
 					setShoesF(res.products);
 					console.log(res);
 				});
@@ -32,10 +48,13 @@ function App() {
 	};
 
 	useEffect(() => {
+		setIsLoading(true);
 		getShoesM();
 		getShoesF();
+		setIsLoading(false);
 	}, []);
 
+	if (isLoading) return <p>is loading...</p>;
 	return (
 		<>
 			<main className={styles.home}>
@@ -54,7 +73,7 @@ function App() {
 
 				<div className={styles.catalogContainer}>
 					<h2>Men's Shoes ({shoesM.length})</h2>
-					<Catalog list={shoesM} />
+					{isLoading ? <p>is loading...</p> : <Catalog list={shoesM} />}
 				</div>
 
 				<hr />

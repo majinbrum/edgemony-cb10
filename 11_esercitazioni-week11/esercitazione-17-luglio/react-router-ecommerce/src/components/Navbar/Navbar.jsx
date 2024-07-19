@@ -1,5 +1,8 @@
 import { NavLink } from "react-router-dom";
 
+import { useContext } from "react";
+import { CartContext } from "../../providers/CartContext.jsx";
+
 import styles from "./Navbar.module.css";
 
 // const navListItems = [
@@ -23,12 +26,7 @@ import styles from "./Navbar.module.css";
 import { useState, useEffect } from "react";
 
 function Navbar() {
-	const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || []);
-	const [cartAmount, setCartAmount] = useState(0);
-
-	useEffect(() => {
-		setCartAmount(cart.length);
-	}, [cart]);
+	const { cart } = useContext(CartContext);
 
 	return (
 		<>
@@ -42,7 +40,7 @@ function Navbar() {
 				<div>
 					<NavLink to='cart' className={styles.cartIcon}>
 						<img src='/images/icon-cart.svg' alt='Menu icon' width='18' height='16' />
-						{cartAmount > 0 && <span className={styles.cartAmount}>{cartAmount}</span>}
+						{cart.length > 0 && <span className={styles.cartAmount}>{cart.length}</span>}
 					</NavLink>
 					<img src='/images/image-avatar.png' alt='Menu icon' width='30' height='30' />
 				</div>

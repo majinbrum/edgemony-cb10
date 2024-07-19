@@ -1,42 +1,44 @@
 import { useState, useEffect } from "react";
 import styles from "./Cart.module.css";
 
+import { useContext } from "react";
+import { CartContext, SetCartContext } from "../../providers/CartContext.jsx";
+
+import CartItem from "./CartItem.jsx";
+
 function Cart() {
-	const [isLoading, setIsLoading] = useState(true);
-	const [cart, setCart] = useState(null);
+	// global state
+	const { cart } = useContext(CartContext);
+
+	const [cartAmount, setCartAmout] = useState(0);
 
 	useEffect(() => {
-		setIsLoading(true);
-		setCart(JSON.parse(localStorage.getItem("cart")) || []);
-		setIsLoading(false);
-	}, []);
-
-	useEffect(() => {
-		console.log(cart);
+		const cartItemPrices = cart.map((cartItem) => cartItem.item.price * cartItem.quantity);
+		let cartTotal = 0;
+		cartItemPrices.forEach((cartItemPrice) => (cartTotal += cartItemPrice));
+		setCartAmout(cartTotal.toFixed(2));
 	}, [cart]);
-
-	if (isLoading) return <p>isLoading...</p>;
 
 	return (
 		<>
 			<main className={styles.cart}>
-				<ul>
-					{cart.map((cartItem) => {
-						return (
-							<li key={cartItem.item.id}>
-								<div className={styles.card}>
-									<div className={styles.cardImg}>
-										<img src={cartItem.item.images[0]} alt='Product image' width='200' height='200' />
-									</div>
-									<div className={styles.cardContent}>
-										<h2>{cartItem.item.title}</h2>
-										<h4>Quantity: {cartItem.quantity}</h4>
-									</div>
-								</div>
-							</li>
-						);
-					})}
-				</ul>
+				<h1>Cart</h1>
+				{cart.length === 0 && <h2>There are no products in the cart yet.</h2>}
+
+				{cart.length > 0 && (
+					<>
+						<h2>Your shopping list ({cart.length})</h2>
+						<ul>
+							{cart.map((cartItem) => {
+								return <CartItem key={cartItem.item.id} cartItem={cartItem} />;
+							})}
+						</ul>
+						<div className={styles.cartTotal}>
+							<h2>Your total</h2>
+							<h3>{cartAmount}$</h3>
+						</div>
+					</>
+				)}
 			</main>
 		</>
 	);

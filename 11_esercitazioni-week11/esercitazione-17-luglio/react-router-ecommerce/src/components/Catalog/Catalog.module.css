@@ -17,6 +17,7 @@
 .catalog-product {
 	/* background-color: var(--light); */
 	border: 1px solid var(--light);
+	height: 100%;
 	padding: 2rem;
 	border-radius: 1rem;
 
@@ -26,8 +27,31 @@
 	gap: 1rem 0;
 }
 
+.addButton {
+	border: 2px solid var(--medium);
+	background-color: var(--white);
+	border-radius: 50%;
+	width: 45px;
+	height: 45px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	cursor: pointer;
+}
+
+.addButton:hover {
+	box-shadow: inset 2px 2px 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.catalog-product:has(.productThumbnail:hover) {
+	box-shadow: inset 5px 5px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
 .productThumbnail {
 	text-align: center;
+	cursor: pointer;
 }
 
 .productBrand {
@@ -61,6 +85,8 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
+	margin-top: auto;
 }
 
 .price {
