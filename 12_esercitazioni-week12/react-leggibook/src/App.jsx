@@ -1,6 +1,32 @@
 import { labels } from "./data/labels";
+import { useEffect, useState } from "react";
+import { getBookList } from "./api/bookClient.js";
 
 function App() {
+	const [bookList, setBookList] = useState([]);
+	const [isLoading, setIsLoading] = useState(true);
+
+	const getBooks = async () => {
+		try {
+			const data = await getBookList();
+			setBookList(data);
+		} catch (error) {
+			console.error(error);
+		} finally {
+			setIsLoading(false);
+		}
+	};
+
+	useEffect(() => {
+		getBooks();
+	}, []);
+
+	useEffect(() => {
+		console.log(bookList);
+	}, [bookList]);
+
+	if (isLoading) return <p>is loading...</p>;
+
 	return (
 		<>
 			<div className='flex justify-center'>
