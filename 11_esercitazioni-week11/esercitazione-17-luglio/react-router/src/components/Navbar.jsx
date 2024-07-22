@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const menuList = [
 	{ name: "Home", path: "/" },
 	{ name: "About", path: "about" },
@@ -11,7 +13,10 @@ const Navbar = () => {
 			<ul className='flex gap-4'>
 				{menuList.map((item, index) => (
 					<li key={index}>
-						<a href={item.path}>{item.name}</a>
+						{/* <a href={item.path}>{item.name}</a> */}
+						<NavLink className={({ isActive }) => (isActive ? "font-bold" : "")} to={item.path}>
+							{item.name}
+						</NavLink>
 					</li>
 				))}
 			</ul>

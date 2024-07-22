@@ -8,6 +8,7 @@ import App from "./App.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
 import About from "./pages/About.jsx";
 import Contacts from "./pages/Contacts.jsx";
+import UserPage from "./pages/UserPage.jsx";
 
 // CSS
 import "./index.css";
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
 			{
 				path: "contacts",
 				element: <Contacts />,
+			},
+			{
+				path: "user/:id",
+				element: <UserPage />,
 			},
 		],
 	},
