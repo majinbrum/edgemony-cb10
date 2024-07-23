@@ -1,8 +1,12 @@
 export const labels = {
-	bookList: "Book list",
-
 	bookTableTitle: "Title",
 	bookTableAuthor: "Author",
 	bookTableGenre: "Genre",
 	bookTableISBN: "ISBN",
+	bookTableBtnDetail: "Details",
+
+	bookList: "Book list",
+	leggiBookTitle: "Leggi Book",
+
+	navHome: "Home",
 };
