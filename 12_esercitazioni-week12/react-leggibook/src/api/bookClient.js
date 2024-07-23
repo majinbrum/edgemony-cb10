@@ -8,8 +8,15 @@ export const getBookList = () => {
 						id: 1,
 						isbn: "0-8783-3579-X",
 						title: "Paperino discovers the world",
-						genres: ["fantasy", "children"],
+						genre: "fantasy",
 						author: "Pippo and Pluto",
+					},
+					{
+						id: 2,
+						isbn: "0-8783-3579-Y",
+						title: "Paperino and the gold of Ruanda",
+						genre: "adventure",
+						author: "Pippo alone",
 					},
 				];
 			});
