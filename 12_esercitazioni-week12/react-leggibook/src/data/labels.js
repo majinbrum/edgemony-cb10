@@ -9,4 +9,10 @@ export const labels = {
 	leggiBookTitle: "Leggi Book",
 
 	navHome: "Home",
+	filterBookByTitle: "Filter book by title:",
+	searchBookTitle: "Search book title",
+
+	isLoading: "is loading...",
+
+	errorUhOh: "Uh-oh!",
 };
