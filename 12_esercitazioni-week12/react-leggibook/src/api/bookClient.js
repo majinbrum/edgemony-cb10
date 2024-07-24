@@ -47,6 +47,14 @@ export const getBookDetail = () => {
 	});
 };
 
+export const addBook = (body) => {
+	return new Promise((resolve) => {
+		setTimeout(() => {
+			resolve({ ...body, id: self.crypto.randomUUID() });
+		}, 1000);
+	});
+};
+
 // export const getBookList = async () => {
 // 	try {
 // 		const res = await fetch("https://jsonplaceholder.typicode.com/users");

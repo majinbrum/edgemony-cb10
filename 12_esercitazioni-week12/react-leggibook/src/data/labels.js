@@ -9,6 +9,8 @@ export const labels = {
 	leggiBookTitle: "Leggi Book",
 
 	navHome: "Home",
+	navCreate: "Create",
+
 	filterBookByTitle: "Filter book by title:",
 	searchBookTitle: "Search book title",
 
