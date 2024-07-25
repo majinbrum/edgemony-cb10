@@ -55,6 +55,14 @@ export const addBook = (body) => {
 	});
 };
 
+export const editBook = (body) => {
+	return new Promise((resolve) => {
+		setTimeout(() => {
+			resolve({ ...body });
+		}, 1000);
+	});
+};
+
 // export const getBookList = async () => {
 // 	try {
 // 		const res = await fetch("https://jsonplaceholder.typicode.com/users");
