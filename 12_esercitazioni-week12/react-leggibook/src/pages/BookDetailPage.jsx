@@ -65,9 +65,7 @@ function BookDetailPage() {
 									<h1 className='mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>{book.title}</h1>
 									<p className='mt-6 text-xl leading-8 text-gray-700'>{book.description}</p>
 									<div className='mt-2'>
-										<span key={index} className='bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-indigo-400 border border-indigo-400'>
-											{book.genre}
-										</span>
+										<span className='bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-indigo-400 border border-indigo-400'>{book.genre}</span>
 									</div>
 								</>
 							)}
