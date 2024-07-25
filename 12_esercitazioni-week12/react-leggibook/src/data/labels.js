@@ -4,6 +4,7 @@ export const labels = {
 	bookTableGenre: "Genre",
 	bookTableISBN: "ISBN",
 	bookTableBtnDetail: "Details",
+	bookTableBtnEdit: "Edit",
 
 	bookList: "Book list",
 	leggiBookTitle: "Leggi Book",
