@@ -5,7 +5,7 @@ function BookForm({ value, onSubmit, hasError }) {
 		title: value?.title || "",
 		author: value?.author || "",
 		isbn: value?.isbn || "",
-		genres: value?.genres || [],
+		genre: value?.genre || "",
 		description: value?.description || "",
 	};
 
@@ -14,11 +14,11 @@ function BookForm({ value, onSubmit, hasError }) {
 
 	const titleValidation = !form.title.length;
 	const authorValidation = !form.author.length;
-	const genresValidation = !form.genres.length;
+	const genreValidation = !form.genre.length;
 	const descriptionValidation = !form.description.length;
 	const isbnValidation = !form.isbn.length;
 
-	const formValidation = titleValidation || authorValidation || genresValidation || descriptionValidation || isbnValidation;
+	const formValidation = titleValidation || authorValidation || genreValidation || descriptionValidation || isbnValidation;
 
 	const handleChange = (e) => {
 		const name = e.target.name;
@@ -62,16 +62,9 @@ function BookForm({ value, onSubmit, hasError }) {
 				</div>
 			</div>
 			<div>
-				<label className='sr-only'>Genres</label>
+				<label className='sr-only'>Genre</label>
 				<div className='relative'>
-					<input
-						name='genres'
-						onChange={handleChange}
-						type='text'
-						className='w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm'
-						placeholder='Enter genres'
-						value={form.genres.join(", ")}
-					/>
+					<input name='genre' onChange={handleChange} type='text' className='w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm' placeholder='Enter genre' value={form.genre} />
 				</div>
 			</div>
 			<div>
