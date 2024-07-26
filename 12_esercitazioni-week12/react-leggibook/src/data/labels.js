@@ -5,6 +5,7 @@ export const labels = {
 	bookTableISBN: "ISBN",
 	bookTableBtnDetail: "Details",
 	bookTableBtnEdit: "Edit",
+	bookTableBtnDelete: "Delete",
 
 	bookList: "Book list",
 	leggiBookTitle: "Leggi Book",
@@ -18,4 +19,10 @@ export const labels = {
 	isLoading: "is loading...",
 
 	errorUhOh: "Uh-oh!",
+	errorGoBack: "Go back Home",
+
+	createPageTitle: "Insert the book here",
+	createPageHeadline: "Insert title, author, genre, isbn, description",
+	editPageTitle: "Edit the book here",
+	editPageHeadline: "Insert title, author, genre, isbn, description",
 };
