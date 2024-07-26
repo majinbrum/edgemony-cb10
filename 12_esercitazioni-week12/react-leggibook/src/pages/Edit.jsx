@@ -29,11 +29,11 @@ function Edit() {
 		getBook(id);
 	}, []);
 
-	const handleSubmit = async (value) => {
+	const handleEdit = async (body) => {
 		try {
-			const res = await editBook({ ...value, id });
+			const res = await editBook({ id, ...body });
 			console.log(res);
-			navigate("/");
+			navigate(`books/${id}`);
 		} catch (error) {
 			console.error(error);
 			setHasError((prevState) => {
@@ -50,7 +50,7 @@ function Edit() {
 				<div className='mx-auto max-w-lg'>
 					<h1 className='text-center text-2xl font-bold text-indigo-600 sm:text-3xl'>Edit the book here</h1>
 					<p className='mx-auto mt-4 max-w-md text-center text-gray-500'>Insert title, author, genre, isbn, description</p>
-					<BookForm value={book} onSubmit={handleSubmit} hasError={hasError} />
+					<BookForm value={book} onSubmit={handleEdit} hasError={hasError} />
 				</div>
 			</div>
 		</div>
