@@ -63,6 +63,14 @@ export const editBook = (body) => {
 	});
 };
 
+export const deleteBook = (id) => {
+	return new Promise((resolve) => {
+		setTimeout(() => {
+			resolve(`L'elemento ${id} è stato cancellato`);
+		}, 500);
+	});
+};
+
 // export const getBookList = async () => {
 // 	try {
 // 		const res = await fetch("https://jsonplaceholder.typicode.com/users");
