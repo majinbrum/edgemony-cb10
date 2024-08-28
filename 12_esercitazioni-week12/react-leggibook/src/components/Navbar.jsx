@@ -1,7 +1,10 @@
 import { NavLink } from "react-router-dom";
 import { labels } from "../data/labels.js";
 
-const menuList = [{ name: labels.navHome, path: "/" }];
+const menuList = [
+	{ name: labels.navHome, path: "/" },
+	{ name: labels.navCreate, path: "books/create" },
+];
 
 function Navbar() {
 	return (

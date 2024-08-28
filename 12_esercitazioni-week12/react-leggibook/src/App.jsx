@@ -1,6 +1,6 @@
 import { labels } from "./data/labels";
 import { useEffect, useState } from "react";
-import { getBookList } from "./api/bookClient.js";
+import { deleteBook, getBookList } from "./api/bookClient.js";
 import { Link } from "react-router-dom";
 
 function App() {
@@ -21,6 +21,17 @@ function App() {
 
 	const handleChange = (e) => {
 		setFilter(e.target.value.toLowerCase());
+	};
+
+	const handleDelete = async (id) => {
+		try {
+			const res = await deleteBook(id);
+			console.log(res);
+			setIsLoading(true);
+			getBooks();
+		} catch (error) {
+			console.error("Error", error);
+		}
 	};
 
 	useEffect(() => {
@@ -60,12 +71,18 @@ function App() {
 											<tr key={book.id}>
 												<td className='whitespace-nowrap px-4 py-2 font-medium text-gray-900'>{book.title}</td>
 												<td className='whitespace-nowrap px-4 py-2 text-gray-700'>{book.author}</td>
-												<td className='whitespace-nowrap px-4 py-2 text-gray-700'>{book.genres.join(", ")}</td>
+												<td className='whitespace-nowrap px-4 py-2 text-gray-700'>{book.genre}</td>
 												<td className='whitespace-nowrap px-4 py-2 text-gray-700'>{book.isbn}</td>
-												<td className='whitespace-nowrap px-4 py-2'>
+												<td className='whitespace-nowrap flex gap-2 px-4 py-2'>
 													<Link to={`/books/${book.id}`} className='inline-block rounded bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700'>
 														{labels.bookTableBtnDetail}
 													</Link>
+													<Link to={`/edit/${book.id}`} className='inline-block rounded bg-green-600 px-4 py-2 text-xs font-medium text-white hover:bg-green-700'>
+														{labels.bookTableBtnEdit}
+													</Link>
+													<button onClick={() => handleDelete(book.id)} className='inline-block rounded bg-red-600 px-4 py-2 text-xs font-medium text-white hover:bg-red-700'>
+														{labels.bookTableBtnDelete}
+													</button>
 												</td>
 											</tr>
 										);
