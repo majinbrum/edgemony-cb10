@@ -1,0 +1,46 @@
+Esercizio 1 - Livello Facile
+https://github.com/jamiebuilds/the-super-tiny-compiler/blob/master/the-super-tiny-compiler.js
+Leggi attentamente il codice di questo mini-compilatore e rispondi alle seguenti domande:
+
+=====================================================
+
+* Quali sono le principali componenti del mini-compilatore che riesci a individuare nel codice? Elencale brevemente.
+* 1. PARSING
+In questa prima fase viene preso il codice "grezzo" e suddiviso in token, per mezzo del tokenizer, che verranno formattati in una "rappresentazione intermedia", chiamata anche Abstract Syntax Tree, che descrive ogni parte della sintassi e la relazione tra le sue parti.
+
+* 2. TRANSFORMATION 
+Nella seconda fase viene presa questa rappresentazione e, utilizzando i singoli "nodi" (AST Nodes), viene o manipolata, o tradotta in un nuovo linguaggio per intero. Per farlo vengono creati gli oggetti "visitors", in cui si passano il nodo e il parent node di riferimento. Durante la navigazione tra i nodi, ovvero il processo "traversal", i visitors con tipo corrispondente verranno richiamati, nonché aggiornati con indicazioni legate al branch dell'AST (enter/exit).
+
+* 3. CODE GENERATION
+La terza fase prevede semplicemente la codifica (lo stringify) dell'AST in un'unica stringa di codice.
+
+=====================================================
+
+* Cos'è e cosa fa la funzione tokenizer? Spiegalo con parole tue.
+-Suddivide il codice "grezzo" in token, array di oggetti che descrivono parti isolate della sintassi. 
+
+ *   [
+ *     { type: 'paren',  value: '('        },
+ *     { type: 'name',   value: 'add'      },
+ *     { type: 'number', value: '2'        },
+ *     { type: 'paren',  value: '('        },
+ *     { type: 'name',   value: 'subtract' },
+ *     { type: 'number', value: '4'        },
+ *     { type: 'number', value: '2'        },
+ *     { type: 'paren',  value: ')'        },
+ *     { type: 'paren',  value: ')'        },
+ *   ]
+
+Come visto nell'esempio possono essere nomi di metodi, punteggiatura, numeri, ...
+
+=====================================================
+
+* Perché è fondamentale avere un parser in un compilatore? Quale ruolo svolge?
+-Credo sia il passaggio più importante in quanto si occupa della sua riorganizzazione, senza la quale non potrebbero avvenire né la manipolazione del codice né la traduzione dello stesso.
+
+=====================================================
+
+* Se dovessi creare un conta caratteri in JavaScript, quali parti di questo compilatore ti sarebbero utili?
+-Il tokenizer, modificandolo in base al tipo di caratteri che si vogliono analizzare (per esempio: non avendo come obiettivo quello di eseguire delle istruzioni, in un contacaratteri non abbiamo bisogno dei name di metodi, ma invece potremmo avere bisogno di salvare anche gli spazi o "whitespaces")
+-Il parser
+-Il traverser
