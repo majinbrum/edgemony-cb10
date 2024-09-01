@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
+import Aside from "../(components)/(layout)/Aside";
 
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
@@ -16,7 +17,12 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<body className={dmSans.className}>{children}</body>
+			<body className={dmSans.className}>
+				<main className='p-12  h-screen flex gap-x-8 bg-gray-100 max-w-screen-2xl lg:rounded-xl lg:shadow-sm'>
+					<Aside />
+					{children}
+				</main>
+			</body>
 		</html>
 	);
 }
