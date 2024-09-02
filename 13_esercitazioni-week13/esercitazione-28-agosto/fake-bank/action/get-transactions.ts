@@ -26,3 +26,13 @@ export const getTransactions = async (): Promise<ITransaction[]> => {
 // 	.then((res) => {
 // 		console.log(res);
 // 	});
+
+export const getTransactionsByType = async (type: string): Promise<ITransaction[]> => {
+	try {
+		const res = await fetch(`http://localhost:3000/api/transactions/${type}`);
+		const data = await res.json();
+		return data.transactions;
+	} catch (error: any) {
+		throw Error(error.message);
+	}
+};

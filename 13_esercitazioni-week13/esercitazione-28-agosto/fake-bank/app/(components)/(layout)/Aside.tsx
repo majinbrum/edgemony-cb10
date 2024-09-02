@@ -1,4 +1,4 @@
-import Link from "next/link";
+import NavItem from "./NavItem";
 
 function Aside() {
 	{
@@ -55,24 +55,20 @@ function Aside() {
 				</svg>
 			),
 		},
+		{
+			id: 4,
+			label: "Analytics",
+			href: "/analytics",
+			icon: (
+				<svg className='h-5 w-5' width='24' height='24' viewBox='0 0 24 24' strokeWidth='2' stroke='currentColor' fill='none' strokeLinecap='round' strokeLinejoin='round'>
+					<path stroke='none' d='M0 0h24v24H0z' /> <line x1='4' y1='19' x2='20' y2='19' /> <polyline points='4 15 8 9 12 11 16 6 20 10' />
+				</svg>
+			),
+		},
 		// {
-		// id: 4,
-		// 	label: "Credit",
-		// 	icon: (
-		// 		<svg className='w-5 h-5' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-		// 			<path
-		// 				d='M15 5V7M15 11V13M15 17V19M5 5C3.89543 5 3 5.89543 3 7V10C4.10457 10 5 10.8954 5 12C5 13.1046 4.10457 14 3 14V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V14C19.8954 14 19 13.1046 19 12C19 10.8954 19.8954 10 21 10V7C21 5.89543 20.1046 5 19 5H5Z'
-		// 				stroke='currentColor'
-		// 				strokeWidth='2'
-		// 				strokeLinecap='round'
-		// 				strokeLinejoin='round'
-		// 			/>
-		// 		</svg>
-		// 	),
-		// },
-		// {
-		// id: 5,
+		// 	id: 5,
 		// 	label: "Settings",
+		// 	href: "/analytics",
 		// 	icon: (
 		// 		<svg className='w-5 h-5' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
 		// 			<path
@@ -106,15 +102,7 @@ function Aside() {
 			<div className='flex flex-col'>
 				<nav>
 					{navItems.map((item) => {
-						return (
-							<Link
-								key={item.id}
-								className='flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700'
-								href={item.href}>
-								{item.icon}
-								<span className='mx-4 font-medium'>{item.label}</span>
-							</Link>
-						);
+						return <NavItem key={item.id} item={item} />;
 					})}
 				</nav>
 			</div>

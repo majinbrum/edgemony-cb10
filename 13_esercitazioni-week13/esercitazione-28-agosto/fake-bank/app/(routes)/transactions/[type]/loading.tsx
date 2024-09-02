@@ -1,4 +1,4 @@
-import LoadingPage from "../(components)/(layout)/LoadingPage";
+import LoadingPage from "@/app/(components)/(layout)/LoadingPage";
 
 const Loading = () => {
 	return <LoadingPage />;
