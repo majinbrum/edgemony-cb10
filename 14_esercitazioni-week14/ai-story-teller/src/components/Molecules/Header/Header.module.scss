@@ -1,0 +1,28 @@
+.header {
+	width: 100%;
+	background-color: var(--color-10);
+	padding: 20px;
+}
+
+.main {
+	width: 100%;
+	max-width: 900px;
+	margin: auto;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.title {
+	letter-spacing: 3px;
+	font-size: title("big");
+}
+
+@function title($mode) {
+	@if $mode == "big" {
+		@return 30px;
+	} @else {
+		@return 20px;
+	}
+}

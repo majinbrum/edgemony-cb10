@@ -1,0 +1,27 @@
+.main {
+	background-color: var(--primary);
+	color: var(--color-100);
+	font-weight: 800;
+	padding: rem(10px) rem(20px);
+	border-radius: rem(10px);
+	border: none;
+	cursor: pointer;
+	@include standard-animation(0.35s);
+
+	&.header-btn {
+		@include btn-details(var(--color-100), var(--primary), 800);
+	}
+
+	&.generate-btn {
+		@include btn-details(var(--color-10), var(--color-100), 800);
+	}
+
+	&:hover {
+		background-color: var(--color-100);
+		color: var(--color-0);
+	}
+
+	&:disabled {
+		opacity: 0.5;
+	}
+}

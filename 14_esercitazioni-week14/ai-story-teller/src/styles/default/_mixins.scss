@@ -1,0 +1,17 @@
+@mixin window-style($width: 100%) {
+	width: $width;
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+@mixin standard-animation($duration) {
+	-webkit-transition: all $duration ease-in-out;
+	-o-transition: all $duration ease-in-out;
+	transition: all $duration ease-in-out;
+}
+
+@mixin btn-details($color, $bgColor, $fontWeight) {
+	color: $color;
+	background-color: $bgColor;
+	font-weight: $fontWeight;
+}

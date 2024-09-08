@@ -1,0 +1,31 @@
+.main {
+	width: rem(65px);
+	height: rem(35px);
+	background-color: var(--color-100);
+	border-radius: rem(20px);
+	position: relative;
+	display: flex;
+	align-items: center;
+	transition: all 0.35s ease;
+
+	.dotBtn {
+		position: absolute;
+		left: rem(5px);
+		z-index: 10;
+		width: rem(25px);
+		height: rem(25px);
+		background-color: var(--primary);
+		border-radius: 50%;
+		cursor: pointer;
+
+		&.active {
+			left: unset;
+			right: rem(5px);
+			background-color: var(--color-100);
+		}
+	}
+
+	&:has(div.dotBtn.active) {
+		background-color: var(--primary);
+	}
+}

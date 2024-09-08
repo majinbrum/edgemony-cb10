@@ -1,0 +1,46 @@
+.main {
+	background-color: var(--color-100);
+	color: var(--color-20);
+	font-weight: 500;
+	letter-spacing: rem(1px);
+	padding: rem(20px);
+	border-radius: rem(20px);
+	position: absolute;
+	left: calc(50% - rem(150px));
+	bottom: rem(20px);
+	z-index: 1020;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	row-gap: rem(15px);
+
+	.header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		column-gap: rem(30px);
+	}
+
+	.progressBar {
+		width: 100%;
+		height: rem(5px);
+
+		.fill {
+			width: 0%;
+			height: 100%;
+			border-radius: rem(5px);
+			background-color: var(--color-20);
+			animation: fill 3s linear forwards;
+		}
+	}
+}
+
+@keyframes fill {
+	0% {
+		width: 0%;
+	}
+	100% {
+		width: 100%;
+	}
+}
