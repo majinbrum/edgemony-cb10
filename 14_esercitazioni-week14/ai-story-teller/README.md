@@ -5,7 +5,7 @@
 <div align="center">
   <img src="./preview.jpg" alt="Preview" width="539,5" height="372">
 
-  <h3 align="center">AI Story Tellert</h3>
+  <h3 align="center">AI Story Teller</h3>
 
   <p align="center">
     A simple project to integrate AI and practise Next.js and Typescript!
@@ -92,7 +92,7 @@ To get a local copy up and running follow these simple example steps.
 
 1. Clone the repository to your local machine
    ```sh
-   git clone https://github.com/majinbrum/drum-kit.git
+   git clone https://github.com/majinbrum/ai-story-teller.git
    ```
 2. Change git remote url to avoid accidental pushes to base project
    ```sh
@@ -110,7 +110,8 @@ To get a local copy up and running follow these simple example steps.
    # or
    bun dev
    ```
-5. Open your web browser and navigate to http://localhost:3000.
+5. If you don't have an API_KEY, I fixed an output to a previously generated story so you can try the app and its behaviour.
+6. Open your web browser and navigate to http://localhost:3000.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
